@@ -2,5 +2,8 @@
 Website for booking the Three Amigos Quiz team
 
 Installed packages:
-Django
-Gunicorn
+django
+gunicorn
+google-auth
+pandas
+openpyxl
