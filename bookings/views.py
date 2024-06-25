@@ -5,3 +5,6 @@ from .models import Booking
 
 def get_index(request):
         return render(request, 'index.html')
+
+def get_base(request):
+        return render(request, 'base.html')
