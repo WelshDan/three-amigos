@@ -7,3 +7,4 @@ gunicorn
 google-auth
 pandas
 openpyxl
+pillow
