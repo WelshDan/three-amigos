@@ -22,7 +22,7 @@ LOCATIONS = (
 )
 
 class Booking(models.Model):
-    booking_id = models.AutoField()
+    booking_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=150, blank= False)
     email = models.EmailField(max_length=150, unique=True, blank=False)
     company = models.CharField(max_length=150)
@@ -34,15 +34,15 @@ class Booking(models.Model):
         max_length=20,
         choices=TYPES,
     )
-    quizzers = models.IntegerField(max_length=3)
+    quizzers = models.IntegerField()
     where = models.CharField(
         max_length=30,
         choices=LOCATIONS,
     )
-    when = models.DateTimeField()
+    when = models.DateTimeField(default=timezone.now)
     sent = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"Booking #{self.booking_id} - Name {self.name} - Email {self.email}
-                - Company {self.company} - Reason {self.reason} - Type of Quiz {self.quiz_type}
-                - No.of Quizzers {self.quizzers} - Location {self.where} - Date/Time {self.when}"
+        return f"Booking #{self.booking_id} - Name {self.name} - Email {self.email}"
+        "- Company {self.company} - Reason {self.reason} - Type of Quiz {self.quiz_type}"
+        "- No.of Quizzers {self.quizzers} - Location {self.where} - Date/Time {self.when}"
