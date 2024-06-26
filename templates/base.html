@@ -28,7 +28,74 @@
 </head>
 
 <body>
-    
+    <!-- ===== Header ===== -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+            <h1 class="logo me-auto me-lg-0">
+                <a href="{% url 'index' %}">Three Amigos Quiz</a>
+            </h1>
+        </div>
+        <!-- Navbar -->
+         <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li class="nav-item dropdown d-lg-none">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    Home
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'index' %}#hero">Home</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#book">Book</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#enquire">Enquire</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#results">Results</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#upcoming">Upcoming</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#info">Info</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#hero">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#book">Book</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#enquire">Enquire</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#results">Results</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#upcoming">Upcoming</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#info">Info</a>
+                </li>
+            </ul>
+         </nav>
+    </header>
+
+    <main>
+
+        {% block content %}
+        <!-- Main content goes here -->
+        {% endblock content %}
+
+    </main>
+
+    <!-- ===== Main Footer ===== -->
+     <footer id="footer" class="footer"
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright {% now 'Y' %}
+                <strong><span>Dan Roberts</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Template Main JS File -->
+     <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 
 </html>
