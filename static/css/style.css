@@ -48,6 +48,30 @@ h6 {
     font-family: "Cabin", serif;
 }
 
+/*----- Buttons -----*/
+.btn-book,
+.btn-enquire {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    line-height: 1;
+    background-color: #000000;
+    color: #fff;
+    border: 2px solid #429e74;
+}
+
+.btn-book:hover,
+.btn-enquire:hover {
+    background: #429e74;
+    color: #fff;
+}
+
 /*----- Footer -----*/
 #footer {
     background: black;

@@ -1,5 +1,7 @@
 {% load static %}
 
+{% url 'index' as index_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,15 +47,22 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'index' %}#hero">Home</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#upcoming">Upcoming</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#results">Results</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#book">Book</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#enquire">Enquire</a></li>
-                        <li><a class="dropdown-item" href="{% url 'index' %}#results">Results</a></li>
-                        <li><a class="dropdown-item" href="{% url 'index' %}#upcoming">Upcoming</a></li>
-                        <li><a class="dropdown-item" href="{% url 'index' %}#info">Info</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#info">Quiz Info</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#wirstroms">Wirströms Pub</a></li>
                     </ul>
                 </li>
                 <li>
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#hero">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#upcoming">Upcoming</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#results">Results</a>
                 </li>
                 <li>
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#book">Book</a>
@@ -62,13 +71,10 @@
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#enquire">Enquire</a>
                 </li>
                 <li>
-                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#results">Results</a>
-                </li>
-                <li>
-                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#upcoming">Upcoming</a>
-                </li>
-                <li>
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#info">Info</a>
+                </li>
+                <li>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#wirstroms">Wirströms Pub</a>
                 </li>
             </ul>
          </nav>
