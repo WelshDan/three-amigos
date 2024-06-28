@@ -87,6 +87,10 @@ h6 {
 .navbar {
     padding: 0;
     background-color: #9e7442;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .navbar ul {
@@ -150,7 +154,7 @@ h6 {
 
 .navbar .dropdown ul a {
     padding: 10px 20px;
-    color: #000000;
+    color: #fff;
 }
 
 .navbar .dropdown ul a i {
@@ -191,6 +195,7 @@ h6 {
         left: -100%;
     }
 }
+
 /*--- End Navbar ---*/
 
 /*----- Hero section -----*/
