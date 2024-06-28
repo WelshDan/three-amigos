@@ -15,8 +15,8 @@
     <meta content="AW Stockholm, aw, gamla stan, quiz, aw quiz, Stockholm quiz, pub quiz" name="keywords" />
 
     <!-- Favicons -->
-    <link rel="icon" href="{% static 'media/favicon32.png' %}" />
-    <link rel="apple-touch-icon" href="{% static 'media/apple-touch-icon.png.png' %}" />
+    <link rel="icon" href="{% static 'media/favicon-32.png' %}" />
+    <link rel="apple-touch-icon" href="{% static 'media/apple-touch-icon.png' %}" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,9 @@
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
             <h1 class="logo me-auto me-lg-0">
-                <a href="{% url 'index' %}">Three Amigos Quiz</a>
+                <a href="{% url 'index' %}">
+                    <img src="static/media/index-images/ta-logo-9E7442.png" id=logo alt="Three Amigos Logo" />
+                </a>
             </h1>
         </div>
         <!-- Navbar -->
