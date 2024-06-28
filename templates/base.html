@@ -33,15 +33,15 @@
     <!-- ===== Header ===== -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-            <h1 class="logo me-auto me-lg-0">
-                <a href="{% url 'index' %}">
-                    <img src="static/media/index-images/ta-logo-9E7442.png" id=logo alt="Three Amigos Logo" />
-                </a>
-            </h1>
         </div>
         <!-- Navbar -->
          <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
+                <li>
+                    <a href="{% url 'index' %}">
+                        <img src="static/media/index-images/ta-logo-9E7442.png" id=logo alt="Three Amigos Logo" />
+                    </a>
+                </li>
                 <li class="nav-item dropdown d-lg-none">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">

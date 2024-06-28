@@ -22,7 +22,7 @@
 body {
     font-family: "biorhyme", sans-serif;
     background: #9e7442;
-    color: #9e7442;
+    color: #d9ba85;
 }
 a {
     color: #9e7442;
@@ -77,25 +77,32 @@ h6 {
 
 /*----- Nav menu -----*/
 /*Desktop Navigation*/
-.header img{
-    height: 40px;
+.navbar img{
+    padding-left: 20px;
+    height: 60px;
     width: auto;
+    position: fixed;
 }
 
 .navbar {
     padding: 0;
     background-color: #9e7442;
-    float: right;
 }
 
 .navbar ul {
+    padding-right: 20px;
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: end;
 }
 
 .navbar li {
     position: relative;
+}
+
+.navbar li:first-child {
+    margin-inline-end: auto;
 }
 
 .navbar a {
@@ -194,6 +201,7 @@ h6 {
     background-size: cover;
     position: relative;
     padding-top: 30;
+    text-align: center;
 }
 
 #hero:before {
