@@ -78,9 +78,8 @@ h6 {
 /*----- Nav menu -----*/
 /*Desktop Navigation*/
 .navbar img{
-    padding-left: 20px;
-    height: 60px;
-    width: auto;
+    width:15rem;
+    height: auto;
     position: fixed;
 }
 
@@ -246,6 +245,14 @@ h6 {
 }
 
 /*--- End Hero Section ---*/
+
+/*----- About Us section -----*/
+#about-us {
+    background: #9e7442;
+    color: #fff;
+}
+
+/*--- End About Us Section ---*/
 
 /*----- Footer -----*/
 #footer {
