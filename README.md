@@ -6,5 +6,6 @@ django
 gunicorn
 google-auth
 pandas
+gspread
 openpyxl
 pillow
