@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.get_index, name='index'),
     path('base/', views.get_base, name='base'),
     path('bookings/', include('bookings.urls')),
+    path('upcoming/', include('upcoming.urls')),
 ]
