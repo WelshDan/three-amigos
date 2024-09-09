@@ -8,3 +8,6 @@ def get_index(request):
 
 def get_base(request):
         return render(request, 'base.html')
+
+def get_dates(request):
+        return render(request, 'dates.html')

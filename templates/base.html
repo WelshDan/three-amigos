@@ -1,7 +1,7 @@
 {% load static %}
 
 {% url 'index' as index_url %}
-{% url 'upcoming' as upcoming_url %}
+{% url 'dates' as dates_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +52,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'index' %}#hero">Home</a></li>
-                        <li><a class="dropdown-item" href="{% url 'upcoming' %}#upcoming">Upcoming</a></li>
+                        <li><a class="dropdown-item" href="{% url 'dates' %}#dates">Dates</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#results">Results</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#book">Book</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#enquire">Enquire</a></li>
@@ -64,7 +64,7 @@
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#hero">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link d-none d-lg-block" href="{% url 'upcoming' %}#upcoming">Upcoming</a>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'dates' %}#dates">Dates</a>
                 </li>
                 <li>
                     <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#results">Results</a>

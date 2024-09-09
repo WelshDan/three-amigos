@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bookings import views
+from dates import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.get_index, name='index'),
     path('base/', views.get_base, name='base'),
+    path('dates/', views.get_dates, name='dates'),
     path('bookings/', include('bookings.urls')),
-    path('upcoming/', include('upcoming.urls')),
+    path('dates/', include('dates.urls')),
 ]

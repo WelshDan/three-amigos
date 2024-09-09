@@ -1,5 +1,6 @@
 from django.urls import path
-from dates import views
+from . import views
 
+app_name = 'dates'
 urlpatterns = [
 ]
