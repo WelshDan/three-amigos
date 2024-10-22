@@ -4,12 +4,27 @@ fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
 })
     .then((response) => response.json())
     .then((data) => {
-        const datesList = document.getElementById('dates-list');
+        
+        const gsList = document.getElementById('gs-dates-list');
+        const cityList = document.getElementById('city-dates-list');
+
+        gsList.innerHTML = '';
+        cityList.innerHTML = '';
 
         data.forEach((item) => {
-            const li = document.createElement('li');
-            li.textContent = item.Dates;
-            datesList.appendChild(li);
+            if (item.GS) {
+                const gsli = document.createElement('li');
+                gsli.className = 'list-group-item';
+                gsli.textContent = item.GS;
+                gsList.appendChild(gsli);
+            }
+
+            if (item.City) {
+                const cityli = document.createElement('li');
+                cityli.className = 'list-group-item';
+                cityli.textContent = item.City;
+                cityList.appendChild(cityli);
+            }
         });
     })
     .catch((error) => console.log('Error:', error));

@@ -271,9 +271,12 @@ h6 {
     text-align: center;
 }
 
-#upcoming #dates-list {
+#upcoming #gs-dates-list,
+#upcoming #city-dates-list {
     list-style: none;
     padding-left: 0;
+    background-color: #cda45e;
+    color: red;
 }
 
 /*---------- End of Index page ----------*/
