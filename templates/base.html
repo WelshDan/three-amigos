@@ -1,7 +1,6 @@
 {% load static %}
 
 {% url 'index' as index_url %}
-{% url 'dates' as dates_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +41,7 @@
             <ul class="navbar ml-auto ">
                 <li>
                     <a href="{% url 'index' %}">
-                        <img src="static/media/index-images/ta-logo-9E7442.png" id=logo alt="Three Amigos Logo" />
+                        <img src="{% static '/media/index-images/ta-logo-9E7442.png' %}" id=logo alt="Three Amigos Logo" />
                     </a>
                 </li>
                 <li class="nav-item dropdown d-lg-none">
@@ -105,7 +104,7 @@
     <!-- End Footer -->
 
     <!-- Template Main JS File -->
-     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
     <!-- jQuery first, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
