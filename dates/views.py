@@ -6,6 +6,9 @@ from .services import get_sheet_upcoming_dates
 def get_dates(request):
     return render(request, 'dates.html')
 
+def get_results(request):
+    return render(request, 'results.html')
+
 def get_index(request):
     return render(request, 'index.html')
 

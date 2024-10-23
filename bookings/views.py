@@ -11,3 +11,6 @@ def get_base(request):
 
 def get_dates(request):
         return render(request, 'dates.html')
+
+def get_results(request):
+        return render(request, 'results.html')
