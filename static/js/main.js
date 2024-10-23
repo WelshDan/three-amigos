@@ -14,14 +14,12 @@ fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
         data.forEach((item) => {
             if (item.GS) {
                 const gsli = document.createElement('li');
-                gsli.className = 'list-group-item';
                 gsli.textContent = item.GS;
                 gsList.appendChild(gsli);
             }
 
             if (item.City) {
                 const cityli = document.createElement('li');
-                cityli.className = 'list-group-item';
                 cityli.textContent = item.City;
                 cityList.appendChild(cityli);
             }
