@@ -26,3 +26,16 @@ fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
         });
     })
     .catch((error) => console.log('Error:', error));
+
+    const tabs= document.querySelectorAll('.nav-link');
+    const all_content= document.querySelectorAll('.tab-content');
+
+    tabs.forEach((tab, index)=>{
+        tab.addEventListener('click', ()=>{
+            tabs.forEach(tab=>{tab.classList.remove('active')});
+            tab.classList.add('active');
+        
+        all_content.forEach(content=>{content.classList.remove('active')});
+        all_content[index].classList.add('active');
+        })
+    })
