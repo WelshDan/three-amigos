@@ -282,7 +282,30 @@ h6 {
     color: #000000;
 }
 
-/*---------- End of Index page ----------*/
+/*---------- End of Dates page ----------*/
+
+/*---------- Results page ----------*/
+#results {
+    padding-top: 13rem;
+    background: #cda45e;
+    color: #fff;
+}
+
+#results h1,
+#results h4,
+#results h5,
+#results h6 {
+    text-align: center;
+    color: #F5F5DC;
+}
+
+#results #results-date-list {
+    list-style: none;
+    padding-left: 0;
+    color: #000000;
+}
+
+/*---------- End of Results page ----------*/
 
 /*----- Footer -----*/
 #footer {

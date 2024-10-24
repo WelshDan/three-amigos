@@ -5,7 +5,43 @@
 {% block content %}
 
 <!-- ===== Quiz Results Section ===== -->
+    <section id="results">
+        <h1>Previous Quiz Results</h1>
+        <div class="container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="date-tab" data-bs-toggle="tab" data-bs-target="#date" type="button"
+                        role="tab" aria-controls="date" aria-selected="true">Wirströms Pub - Gamla Stan</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="date" role="tabpanel" aria-labelledby="date-tab">
+                    <ul id="results-date-list" class="table list-group">
+                        {% if sheet_data %}
+                        {% for row in sheet_data %}
+                        <li class="list-group-item">{{row.Date}}</li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-link');
+            const all_content = document.querySelectorAll('.tab-pane');
 
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    all_content.forEach(content => content.classList.remove('active', 'show'));
 
+                    tab.classList.add('active');
+                    all_content[index].classList.add('active', 'show');
+                });
+            });
+        });
+    </script>
 
 {% endblock %}

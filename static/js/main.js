@@ -1,3 +1,4 @@
+// dates.html - fetch upcoming dates from worksheet
 fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
     method: 'GET',
     headers: { 'Authorization': 'Bearer vmit8bqsm403wpk770oic8pjx691iqtnto847iii' }
@@ -27,15 +28,51 @@ fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
     })
     .catch((error) => console.log('Error:', error));
 
-    const tabs= document.querySelectorAll('.nav-link');
-    const all_content= document.querySelectorAll('.tab-content');
+// dates.html - navlist change active upcoming dates
 
-    tabs.forEach((tab, index)=>{
-        tab.addEventListener('click', ()=>{
-            tabs.forEach(tab=>{tab.classList.remove('active')});
-            tab.classList.add('active');
-        
-        all_content.forEach(content=>{content.classList.remove('active')});
-        all_content[index].classList.add('active');
-        })
+
+// results.html - fetch results from previous quizzes from worksheet
+fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
+    method: 'GET',
+    headers: { 'Authorization': 'Bearer vmit8bqsm403wpk770oic8pjx691iqtnto847iii' }
+})
+    .then((response) => response.json())
+    .then((data) => {
+
+        const resultsDateList = document.getElementById('results-date-list');
+        const resultsWinnerList = document.getElementById('results-winner-list');
+        const resultsSecondList = document.getElementById('results-second-list');
+        const resultsThirdList = document.getElementById('results-third-list');
+
+        resultsDateList.innerHTML = '';
+        resultsWinnerList.innerHTML = '';
+        resultsSecondList.innerHTML = '';
+        resultsThirdList.innerHTML = '';
+
+        data.forEach((item) => {
+            if (item.Date) {
+                const resdate = document.createElement('li');
+                resdate.textContent = item.Date;
+                resultsDateList.appendChild(resdate);
+            }
+
+            if (item.Quiz_Winner) {
+                const reswin = document.createElement('li');
+                reswin.textContent = item.Quiz_Winner;
+                resultsWinnerList.appendChild(reswin);
+            }
+
+            if (item.Second_Place) {
+                const ressecond = document.createElement('li');
+                ressecond.textContent = item.Second_Place;
+                resultsSecondList.appendChild(ressecond);
+            }
+
+            if (item.Third_Place) {
+                const resthird = document.createElement('li');
+                resthird.textContent = item.Third_Place;
+                resultsThirdList.appendChild(resthird);
+            }
+        });
     })
+    .catch((error) => console.log('Error:', error));
