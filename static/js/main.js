@@ -29,6 +29,8 @@ const fetchUpcomingQuizzes = () => {
         })
         .catch((error) => console.log('Error fetching upcoming quizzes:', error));
 };
+
+
 // dates.html - navlist change active upcoming dates
 
 
@@ -41,44 +43,29 @@ const fetchPreviousQuizzes = () => {
         .then((response) => response.json())
         .then((data) => {
 
-            const resultsDateList = document.getElementById('results-date-list');
-            const resultsWinnerList = document.getElementById('results-winner-list');
-            const resultsSecondList = document.getElementById('results-second-list');
-            const resultsThirdList = document.getElementById('results-third-list');
-
-            resultsDateList.innerHTML = '';
-            resultsWinnerList.innerHTML = '';
-            resultsSecondList.innerHTML = '';
-            resultsThirdList.innerHTML = '';
+            const resultsNormalList = document.getElementById('results-normal-list');
+            if (resultsNormalList) {
+                resultsNormalList.innerHTML = '';
 
             data.forEach((item) => {
-                if (item.Date) {
-                    const resdate = document.createElement('li');
-                    resdate.textContent = item.Date;
-                    resultsDateList.appendChild(resdate);
-                }
-
-                if (item.Quiz_Winner) {
-                    const reswin = document.createElement('li');
-                    reswin.textContent = item.Quiz_Winner;
-                    resultsWinnerList.appendChild(reswin);
-                }
-
-                if (item.Second_Place) {
-                    const ressecond = document.createElement('li');
-                    ressecond.textContent = item.Second_Place;
-                    resultsSecondList.appendChild(ressecond);
-                }
-
-                if (item.Third_Place) {
-                    const resthird = document.createElement('li');
-                    resthird.textContent = item.Third_Place;
-                    resultsThirdList.appendChild(resthird);
-                }
-            });
+                const resnormal = document.createElement('li');
+                resnormal.textContent = `${item.Date || 'N/A'} - ${item.Quiz_winner || 'N/A'} - ${item.Second_Place || 'N/A'} - ${item.Third_place || 'N/A'}`;
+                resnormal.classList.add('list-group-item');
+                resultsNormalList.appendChild(resnormal);
+            });                    
+            } else {
+                console.error("results-normal-list item not found");
+            } 
         })
         .catch((error) => console.log('Error fetching previous quizzes:', error));
 };
 
-fetchUpcomingQuizzes();
-fetchPreviousQuizzes();
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('gs-dates-list') || document.getElementById('city-dates-list')) {
+        fetchUpcomingQuizzes();
+    }
+
+    if (document.getElementById('results-normal-list')) {
+        fetchPreviousQuizzes();
+    }
+});

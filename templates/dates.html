@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<body>
+
     <!-- ===== Upcoming Quizzes Section ===== -->
     <section id="upcoming">
         <h1>Upcoming quizzes</h1>
@@ -25,7 +25,7 @@
                         Book a table:
                         <a href="mailto:booking@wirstromspub.se" style="color: #ffffff;">booking@wirstromspub.se</a>
                     </h5>
-                    <ul id="gs-dates-list" class="list-group">
+                    <ul id="gs-dates-list" class="table list-group">
                         {% if sheet_data %}
                             {% for row in sheet_data %}
                             <li class="list-group-item">{{row.GS}}</li>
@@ -39,7 +39,7 @@
                         Book a table:
                         <a href="mailto:bookingcity@wirstromspub.se" style="color: #ffffff;">bookingcity@wirstromspub.se</a>
                     </h5>
-                    <ul id="city-dates-list" class="list-group">
+                    <ul id="city-dates-list" class="table list-group">
                         {% if sheet_data %}
                             {% for row in sheet_data %}
                             <li class="list-group-item">{{row.City}}</li>
@@ -51,10 +51,4 @@
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchUpcomingQuizzes();
-        });
-    </script>
-</body>
 {% endblock %}

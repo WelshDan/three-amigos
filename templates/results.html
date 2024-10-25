@@ -10,16 +10,16 @@
         <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="date-tab" data-bs-toggle="tab" data-bs-target="#date" type="button"
-                        role="tab" aria-controls="date" aria-selected="true">Wirströms Pub - Gamla Stan</button>
+                    <button class="nav-link active" id="normal-tab" data-bs-toggle="tab" data-bs-target="#normal" type="button"
+                        role="tab" aria-controls="normal" aria-selected="true">Wirströms Pub - Gamla Stan</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="date" role="tabpanel" aria-labelledby="date-tab">
-                    <ul id="results-date-list" class="table list-group">
+                <div class="tab-pane fade show active" id="normal" role="tabpanel" aria-labelledby="date-tab">
+                    <ul id="results-normal-list" class="table list-group">
                         {% if sheet_data %}
                         {% for row in sheet_data %}
-                        <li class="list-group-item">{{row.Date}} - {{row.Quiz_Winners}} - {{row.Second_Place}} - {{row.Third_Place}}</li>
+                        <li class="list-group-item">{{ row.Date }} - {{ row.Quiz_Winners}} - {{ row.Second_Place}} - {{ row.Third_Place}}</li>
                         {% endfor %}
                         {% endif %}
                     </ul>
@@ -27,10 +27,5 @@
             </div>
         </div>
     </section>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchPreviousQuizzes();
-        });
-    </script>
 
 {% endblock %}
