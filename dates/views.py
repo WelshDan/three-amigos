@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .services import get_sheet_upcoming_dates
+from .services import get_sheet_past_results
 
 # Create your views here.
 
@@ -21,3 +22,10 @@ def upcoming_dates(request):
     sheet_data = get_sheet_upcoming_dates(api_id)
 
     return render(request, 'dates.html', {'sheet_data': sheet_data})
+
+def past_results(request):
+    api_id = 'fvi6b7rkv2z2b'
+    tab_name = 'past_quizzes_normal'
+    sheet_data = get_sheet_past_results(api_id)
+
+    return render(request, 'results.html', {'sheet_data': sheet_data})
