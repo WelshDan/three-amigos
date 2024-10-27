@@ -16,11 +16,16 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="normal" role="tabpanel" aria-labelledby="date-tab">
+                    <ul class="table list-group">
+                        <li class="list-group-item font-weight-bold"">
+                            <span class="column">Date</span> - <span class="column">Quiz Winners</span> - <span class="column">Second Place</span> - <span class="column">Third Place</span>
+                        </li>
+                    </ul>
                     <ul id="results-normal-list" class="table list-group">
                         {% if sheet_data %}
-                        {% for row in sheet_data %}
-                        <li class="list-group-item">{{ row.Date }} - {{ row.Quiz_Winners}} - {{ row.Second_Place}} - {{ row.Third_Place}}</li>
-                        {% endfor %}
+                            {% for row in sheet_data %}
+                            <li class="list-group-item">{{ row.Date }} - {{ row.Quiz_Winners }} - {{ row.Second_Place }} - {{ row.Third_Place }}</li>
+                            {% endfor %}
                         {% endif %}
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 // dates.html - fetch upcoming dates from worksheet
 const fetchUpcomingQuizzes = () => {
-    fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
+    fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b?sheet=upcoming_quizzes', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer vmit8bqsm403wpk770oic8pjx691iqtnto847iii' }
     })
@@ -30,29 +30,26 @@ const fetchUpcomingQuizzes = () => {
         .catch((error) => console.log('Error fetching upcoming quizzes:', error));
 };
 
-
-// dates.html - navlist change active upcoming dates
-
-
 // results.html - fetch results from previous quizzes from worksheet
 const fetchPreviousQuizzes = () => {
-    fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b', {
+    fetch('https://sheetdb.io/api/v1/fvi6b7rkv2z2b?sheet=past_quizzes_normal', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer vmit8bqsm403wpk770oic8pjx691iqtnto847iii' }
     })
         .then((response) => response.json())
+        
         .then((data) => {
-
+            console.log("Previous quizzes data:", data);
             const resultsNormalList = document.getElementById('results-normal-list');
             if (resultsNormalList) {
                 resultsNormalList.innerHTML = '';
 
-            data.forEach((item) => {
-                const resnormal = document.createElement('li');
-                resnormal.textContent = `${item.Date || 'N/A'} - ${item.Quiz_winner || 'N/A'} - ${item.Second_Place || 'N/A'} - ${item.Third_place || 'N/A'}`;
-                resnormal.classList.add('list-group-item');
-                resultsNormalList.appendChild(resnormal);
-            });                    
+                data.forEach((item) => {
+                    const resnormal = document.createElement('li');
+                    resnormal.textContent = `${item.Date || 'N/A'} - ${item.Quiz_Winners || 'N/A'} - ${item.Second_Place || 'N/A'} - ${item.Third_Place || 'N/A'}`;
+                    resnormal.classList.add('list-group-item');
+                    resultsNormalList.appendChild(resnormal);
+                });
             } else {
                 console.error("results-normal-list item not found");
             } 
