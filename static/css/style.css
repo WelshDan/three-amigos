@@ -305,6 +305,13 @@ h6 {
     color: #000000;
 }
 
+#results th,
+#results td {
+    width: 25%;
+    background-color: #cda45e;
+    color: #F5F5DC;
+}
+
 /*---------- End of Results page ----------*/
 
 /*----- Footer -----*/

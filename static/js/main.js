@@ -45,10 +45,14 @@ const fetchPreviousQuizzes = () => {
                 resultsNormalList.innerHTML = '';
 
                 data.forEach((item) => {
-                    const resnormal = document.createElement('li');
-                    resnormal.textContent = `${item.Date || 'N/A'} - ${item.Quiz_Winners || 'N/A'} - ${item.Second_Place || 'N/A'} - ${item.Third_Place || 'N/A'}`;
-                    resnormal.classList.add('list-group-item');
-                    resultsNormalList.appendChild(resnormal);
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.Date || 'N/A'}</td>
+                        <td>${item.Quiz_Winners || 'N/A'}</td>
+                        <td>${item.Second_Place || 'N/A'}</td>
+                        <td>${item.Third_Place || 'N/A'}</td>
+                    `;
+                    resultsNormalList.appendChild(row);
                 });
             } else {
                 console.error("results-normal-list item not found");
