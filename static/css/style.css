@@ -196,43 +196,6 @@ h6 {
 
 /*--- End Navbar ---*/
 
-/*----- Nav-tabs general -----*/
-
-#results .nav-tabs {
-    border-bottom: none;
-}
-
-#results .nav-tabs .nav-link {
-    color: #F5F5DC;
-    background-color: #9e7442;
-    border: 1px solid #F5F5DC;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color ease 0.3s;
-}
-
-#results .nav-tabs .nav-link:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-#results .nav-tabs .nav-link.active {
-    background-color: #9e7442;
-    color: #F5F5DC;
-    border-color: #9e7442;
-}
-
-#results .nav-tabs .nav-link.active:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-/*--- End Nav-tabs general ---*/
-
 /*---------- Index page ----------*/
 /*----- Hero section -----*/
 #hero {
@@ -300,6 +263,10 @@ h6 {
     color: #fff;
 }
 
+#upcoming h1 {
+    padding: 10px;
+}
+
 #upcoming h1,
 #upcoming h4,
 #upcoming h5,
@@ -313,6 +280,39 @@ h6 {
     list-style: none;
     padding-left: 0;
     color: #000000;
+}
+
+#upcoming .nav-tabs {
+    border-bottom: none;
+}
+
+#upcoming .nav-tabs .nav-link {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border: 1px solid #F5F5DC;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color ease 0.3s;
+}
+
+#upcoming .nav-tabs .nav-link:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#upcoming .nav-tabs .nav-link.active {
+    background-color: #9e7442;
+    color: #F5F5DC;
+    border-color: #9e7442;
+}
+
+#upcoming .nav-tabs .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /*---------- End of Dates page ----------*/
@@ -347,6 +347,39 @@ h6 {
     width: 25%;
     background-color: #cda45e;
     color: #F5F5DC;
+}
+
+#results .nav-tabs {
+    border-bottom: none;
+}
+
+#results .nav-tabs .nav-link {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border: 1px solid #F5F5DC;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color ease 0.3s;
+}
+
+#results .nav-tabs .nav-link:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#results .nav-tabs .nav-link.active {
+    background-color: #9e7442;
+    color: #F5F5DC;
+    border-color: #9e7442;
+}
+
+#results .nav-tabs .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /*---------- End of Results page ----------*/
