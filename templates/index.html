@@ -3,41 +3,41 @@
 {% load static %}
 
 {% block content %}
+    <!-- ===== Intro section ===== -->
+    <section id="intro" class="section align-items-center">
+        <div class="container position-relative text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>The Three Amigos Quiz</h1>
+                    <h2>Looking for an After Work quiz for your company?</h2>
+                    <h2>Or for a Birthday Party?</h2>
+                    <h2>Book with us and you can choose to have it at Wirströms Pub</h2>
+                    <h2>or we can bring it to you</h2>
+                    <div class="btns">
+                        <a href="{% url 'index' %}" class="btn-book">Book Private Quiz</a>
+                        <a href="{% url 'index' %}" class="btn-enquire">Enquire about a Quiz</a>
+                    </div>
+                    <h2>Check out our past quizzes or see future dates</h2>
+                    <div class="btns">
+                        <a href="{% url 'results' %}" class="btn-results">Past Results</a>
+                        <a href="{% url 'dates' %}" class="btn-dates">Upcoming Pub Quizzes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Intro Section-->
 
     <!-- ===== Hero Section ===== -->
      <section id="hero" class="section align-items-center">
         <div class="container position-relative mx-auto text-center text-lg-start">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>The Three Amigos Quiz</h1>
-                    <h2>Need a quiz for an After Work or a birthday party?</h2>
-                    <h2>We have the perfect quiz and the perfect location!</h2>
-                    <h2>(Or we can even bring the quiz to you)</h2>
-                    <h2>Book now or enquire for more information</h2>
-                    <div class="btns">
-                        <a href="{% url 'index' %}" class="btn-book">Book Private Quiz</a>
-                        <a href="{% url 'index' %}" class="btn-enquire">Enquire about a Quiz</a>
-                    </div>
-                    <h2>We host regular quizzes at Wirströms Pub in Gamla Stan. Check "Dates" for future quizzes!</h2>
-                    <h2>Past results of our quizzes can be found here</h2>
+                    
                 </div>
             </div>
         </div>
      </section>
-     <!-- End Hero -->
-
-    <!-- ===== About Us ===== -->
-    <section id="about-us" class="section align-items-center">
-        <div class="container position-relative text-center text-lg-start">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Who are the Three Amigos?</h1>
-                    <h2>There were originally three members of the Three Amigos but the last few years have been  .
-                        The first Three Amigos Quiz was held way back in 2013 and the quiz has been held almost constantly since then at Wirströms Pub.
-                        </h2>
-                </div>
-            </div>
-        </div>
-    </section>
+     <!-- End Hero Section -->
 
 {% endblock %}

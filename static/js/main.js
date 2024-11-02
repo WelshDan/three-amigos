@@ -15,13 +15,15 @@ const fetchUpcomingQuizzes = () => {
 
             data.forEach((item) => {
                 if (item.GS) {
-                    const gsli = document.createElement('li');
+                    const gsli = document.createElement('tr');
+                    gsli.classList.add('list-group-item');
                     gsli.textContent = item.GS;
                     gsList.appendChild(gsli);
                 }
 
                 if (item.City) {
-                    const cityli = document.createElement('li');
+                    const cityli = document.createElement('tr');
+                    cityli.classList.add('list-group-item');
                     cityli.textContent = item.City;
                     cityList.appendChild(cityli);
                 }

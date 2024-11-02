@@ -46,7 +46,9 @@ h6 {
 
 /*----- Buttons -----*/
 .btn-book,
-.btn-enquire {
+.btn-enquire,
+.btn-results,
+.btn-dates {
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -59,11 +61,13 @@ h6 {
     line-height: 1;
     background-color: #000000;
     color: #fff;
-    border: 2px solid #429e74;
+    border: 2px solid #dee2e6;
 }
 
 .btn-book:hover,
-.btn-enquire:hover {
+.btn-enquire:hover,
+.btn-results:hover,
+.btn-dates:hover {
     background: #429e74;
     color: #fff;
     text-decoration: none;
@@ -197,6 +201,15 @@ h6 {
 /*--- End Navbar ---*/
 
 /*---------- Index page ----------*/
+
+/*----- Intro Section -----*/
+#intro {
+    padding-top: 13rem;
+    background: #cda45e;
+    color: #fff;
+}
+/*----- End Intro Section -----*/
+
 /*----- Hero section -----*/
 #hero {
     width: 100%;
@@ -245,15 +258,70 @@ h6 {
 }
 
 /*--- End Hero Section ---*/
+/*---------- End of Index page ----------*/
 
-/*----- About Us section -----*/
-#about-us {
-    background: #9e7442;
+/*---------- Nav-tabs ----------*/
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border: 1px solid #F5F5DC;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color ease 0.3s;
+    padding: 10px;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #9e7442;
+    color: #F5F5DC;
+    border-color: #9e7442;
+    border-bottom: 2px solid #F5F5DC;
+    border: 2px solid #9e7442
+}
+
+.nav-tabs .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:active {
+    border-bottom: 2px solid #F5F5DC;
+}
+/*---------- End Nav-tabs ----------*/
+
+/*---------- Tables page ----------*/
+
+table {
+    background-color: #cda45e;
+    color: #F5F5DC;
+    border: none;
+}
+
+th, td {
+    width: 25%;
+    background-color: #cda45e;
+    color: #F5F5DC;
+    border-top: none;
+}
+
+thead th {
+    background-color: #cda45e;
     color: #F5F5DC;
 }
 
-/*--- End About Us Section ---*/
-/*---------- End of Index page ----------*/
+/*---------- End Tables page ----------*/
 
 /*---------- Dates page ----------*/
 
@@ -263,56 +331,26 @@ h6 {
     color: #fff;
 }
 
-#upcoming h1 {
-    padding: 10px;
-}
-
 #upcoming h1,
 #upcoming h4,
-#upcoming h5,
 #upcoming h6 {
     text-align: center;
     color: #F5F5DC;
 }
 
-#upcoming #gs-dates-list,
-#upcoming #city-dates-list {
-    list-style: none;
-    padding-left: 0;
-    color: #000000;
+#upcoming h5 {
+    text-align: left;
+    padding: 20px;
 }
 
-#upcoming .nav-tabs {
-    border-bottom: none;
-}
-
-#upcoming .nav-tabs .nav-link {
+#upcoming .table th,
+#upcoming #list-group-item {
+    background-color: #cda45e;
     color: #F5F5DC;
-    background-color: #9e7442;
-    border: 1px solid #F5F5DC;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color ease 0.3s;
-}
-
-#upcoming .nav-tabs .nav-link:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-#upcoming .nav-tabs .nav-link.active {
-    background-color: #9e7442;
-    color: #F5F5DC;
-    border-color: #9e7442;
-}
-
-#upcoming .nav-tabs .nav-link.active:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-top: none;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    border-width: 0;
 }
 
 /*---------- End of Dates page ----------*/
@@ -336,50 +374,12 @@ h6 {
     color: #F5F5DC;
 }
 
-#results #results-date-list {
-    list-style: none;
-    padding-left: 0;
-    color: #000000;
-}
-
 #results th,
 #results td {
     width: 25%;
     background-color: #cda45e;
     color: #F5F5DC;
-}
-
-#results .nav-tabs {
-    border-bottom: none;
-}
-
-#results .nav-tabs .nav-link {
-    color: #F5F5DC;
-    background-color: #9e7442;
-    border: 1px solid #F5F5DC;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color ease 0.3s;
-}
-
-#results .nav-tabs .nav-link:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-#results .nav-tabs .nav-link.active {
-    background-color: #9e7442;
-    color: #F5F5DC;
-    border-color: #9e7442;
-}
-
-#results .nav-tabs .nav-link.active:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-top: none;
 }
 
 /*---------- End of Results page ----------*/
