@@ -20,7 +20,7 @@
 
 /*----- General -----*/
 body {
-    font-family: "biorhyme", sans-serif;
+    font-family: "BioRhyme", sans-serif;
     background: #9e7442;
     color: #d9ba85;
 }
@@ -205,9 +205,17 @@ h6 {
 /*----- Intro Section -----*/
 #intro {
     padding-top: 13rem;
+    padding-bottom: 3rem;
     background: #cda45e;
     color: #fff;
 }
+
+#intro h1 {
+    padding: 5%;
+    font-family: "BioRhyme", serif;
+    font-weight: 800;
+}
+
 /*----- End Intro Section -----*/
 
 /*----- Hero section -----*/
@@ -261,6 +269,7 @@ h6 {
 /*---------- End of Index page ----------*/
 
 /*---------- Nav-tabs ----------*/
+
 .nav-tabs {
     border-bottom: none;
 }
@@ -343,14 +352,11 @@ thead th {
     padding: 20px;
 }
 
-#upcoming .table th,
-#upcoming #list-group-item {
+#upcoming tr,
+#upcoming th {
     background-color: #cda45e;
     color: #F5F5DC;
     border-top: none;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    border-width: 0;
 }
 
 /*---------- End of Dates page ----------*/
