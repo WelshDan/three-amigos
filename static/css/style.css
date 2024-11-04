@@ -212,8 +212,18 @@ h6 {
 
 #intro h1 {
     padding: 5%;
+    font-size: 6vw;
     font-family: "BioRhyme", serif;
-    font-weight: 800;
+}
+
+.intro-links {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.pub-link {
+    color: #F5F5DC;
+    text-decoration: none;
 }
 
 /*----- End Intro Section -----*/
@@ -358,6 +368,8 @@ thead th {
     color: #F5F5DC;
     border-top: none;
 }
+
+
 
 /*---------- End of Dates page ----------*/
 
