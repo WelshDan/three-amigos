@@ -405,10 +405,8 @@ thead th {
 
 #results th,
 #results td {
-    width: 25%;
     background-color: #cda45e;
     color: #F5F5DC;
-    border-top: none;
 }
 
 #results .nav-link {
@@ -426,6 +424,11 @@ thead th {
     color: #9e7442;
     background-color: #F5F5DC;
     border-color: #9e7442;
+}
+
+#results #gs-dates-list .list-group-item {
+    color: #cda45e;
+    background-color: #F5F5DC;
 }
 
 /*---------- End of Results page ----------*/

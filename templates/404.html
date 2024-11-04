@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- ===== 404 Error section ===== -->
+<section id="error" class="section align-items-center">
+    <div class="container position-relative text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>404 - page not found</h1>
+                <h2>Wow! Sorry partner, looks like you've stumbled out of the saloon</h2>
+                <h2>Use the links at the top of the page to navigate your way back in</h2>
+                <div class="btns">
+                    <a href="{% url 'index' %}" class="btn-book">Book Private Quiz</a>
+                    <a href="{% url 'index' %}" class="btn-enquire">Enquire about a Quiz</a>
+                </div>
+            </div>
+            <div class="py-4">
+                <h2>Click the link below to let your horse take you home</h2>
+                <h4>
+                    <a href="{% url 'index' %}" class="error-links">Horse! Take me home</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End 404 Error Section-->
+
+{% endblock %}

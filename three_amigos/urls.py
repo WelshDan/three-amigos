@@ -28,3 +28,5 @@ urlpatterns = [
     path('bookings/', include('bookings.urls')),
     path('dates/', include('dates.urls')),
 ]
+
+handler404 = 'bookings.views.error_404'
