@@ -369,7 +369,18 @@ thead th {
     border-top: none;
 }
 
+#upcoming .nav-link.active {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border-color: #F5F5DC;
+}
 
+#upcoming .nav-link:hover,
+#upcoming .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+}
 
 /*---------- End of Dates page ----------*/
 
@@ -398,6 +409,23 @@ thead th {
     background-color: #cda45e;
     color: #F5F5DC;
     border-top: none;
+}
+
+#results .nav-link {
+    border-color: none;
+}
+
+#results .nav-link.active {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border-color: #F5F5DC;
+}
+
+#results .nav-link:hover,
+#results .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
 }
 
 /*---------- End of Results page ----------*/
