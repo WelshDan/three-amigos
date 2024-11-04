@@ -211,14 +211,8 @@ h6 {
 }
 
 #intro h1 {
-    padding: 5%;
-    font-size: 6vw;
+    font-size: 60px;
     font-family: "BioRhyme", serif;
-}
-
-.intro-links {
-    color: #F5F5DC;
-    text-decoration: none;
 }
 
 .pub-link {
@@ -230,12 +224,10 @@ h6 {
 
 /*----- Hero section -----*/
 #hero {
-    width: 100%;
-    height: 100vh;
-    background: url("../media/index-images/three-amigos-sunset.jpg") top center;
+    background: url("../media/index-images/three-amigos-sunset.jpg") center center;
     background-size: cover;
     position: relative;
-    padding-top: 13rem;
+    padding-top: 20rem;
 }
 
 #hero:before {
@@ -276,13 +268,45 @@ h6 {
 }
 
 /*--- End Hero Section ---*/
+
+/*----- Pub Intro Section -----*/
+
+#pub-intro {
+    color: #F5F5DC;
+    background-color: #9e7442;
+
+}
+
+.pub-intro-links {
+    color: #cda45e;
+    text-decoration: none;
+}
+
+/*--- End Pub Intro Section ---*/
+
+/*----- About Us section -----*/
+
+#about-us {
+    padding-bottom: 3rem;
+    background: #cda45e;
+    color: #F5F5DC;
+    text-align: center;
+}
+
+#about-us h2 {
+    text-align: center;
+    color: #fff;
+}
+
+#about-us div {
+    padding-top: 10px;
+}
+
+/*--- End About Us Section ---*/
+
 /*---------- End of Index page ----------*/
 
 /*---------- Nav-tabs ----------*/
-
-.nav-tabs {
-    border-bottom: none;
-}
 
 .nav-tabs .nav-link {
     color: #F5F5DC;
@@ -357,6 +381,10 @@ thead th {
     color: #F5F5DC;
 }
 
+#upcoming h1 {
+    padding: 20px;
+}
+
 #upcoming h5 {
     text-align: left;
     padding: 20px;
@@ -382,6 +410,10 @@ thead th {
     border-color: #9e7442;
 }
 
+#upcoming .nav-tabs {
+    border-bottom: none;
+}
+
 /*---------- End of Dates page ----------*/
 
 /*---------- Results page ----------*/
@@ -392,7 +424,7 @@ thead th {
 }
 
 #results h1 {
-    padding: 10px;
+    padding: 20px;
 }
 
 #results h1,
@@ -407,10 +439,6 @@ thead th {
 #results td {
     background-color: #cda45e;
     color: #F5F5DC;
-}
-
-#results .nav-link {
-    border-color: none;
 }
 
 #results .nav-link.active {
@@ -429,6 +457,10 @@ thead th {
 #results #gs-dates-list .list-group-item {
     color: #cda45e;
     background-color: #F5F5DC;
+}
+
+#results .nav-tabs {
+    border-bottom: none;
 }
 
 /*---------- End of Results page ----------*/
