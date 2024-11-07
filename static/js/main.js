@@ -13,21 +13,36 @@ const fetchUpcomingQuizzes = () => {
             gsList.innerHTML = '';
             cityList.innerHTML = '';
 
-            data.forEach((item) => {
+            let gsActive = false;
+            let cityActive = false;
+
+            data.forEach((item, index) => {
+
+                if (index === 0 && item.GS === 'GS' && item.City === 'City') return;
+
                 if (item.GS) {
+                    gsActive = true;
                     const gsli = document.createElement('tr');
-                    gsli.classList.add('list-group-item');
-                    gsli.textContent = item.GS;
+                    gsli.innerHTML = `<td>${item.GS}</td>`;
                     gsList.appendChild(gsli);
                 }
 
                 if (item.City) {
+                    cityActive = true;
                     const cityli = document.createElement('tr');
-                    cityli.classList.add('list-group-item');
-                    cityli.textContent = item.City;
+                    cityli.innerHTML = `<td>${item.City}</td>`;
                     cityList.appendChild(cityli);
                 }
             });
+            
+            if (gsActive = false) {
+                gsList.innerHTML = `<tr><td>"No dates available"</td></tr>`;
+            }
+
+            if (cityActive = false) {
+                cityList.innerHTML = `<tr><td>"No dates available"</td></tr>`;
+            }            
+
         })
         .catch((error) => console.log('Error fetching upcoming quizzes:', error));
 };

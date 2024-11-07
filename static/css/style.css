@@ -42,6 +42,7 @@ h5,
 h6 {
     font-family: "Cabin", serif;
 }
+
 /*--- End General ---*/
 
 /*----- Buttons -----*/
@@ -353,7 +354,6 @@ table {
 }
 
 th, td {
-    width: 25%;
     background-color: #cda45e;
     color: #F5F5DC;
     border-top: none;
@@ -395,6 +395,20 @@ thead th {
     background-color: #cda45e;
     color: #F5F5DC;
     border-top: none;
+}
+
+#upcoming table td {
+    color: #F5F5DC;
+    background-color: #cda45e;
+    border-bottom-width: 1px;
+    border-bottom-color: #F5F5DC;
+}
+
+#gs-gates-list, #city-gates-list {
+    color: #F5F5DC;
+    background-color: #cda45e;
+    border-bottom-width: 1px;
+    border-bottom-color: #F5F5DC;
 }
 
 #upcoming .nav-link.active {
@@ -439,6 +453,10 @@ thead th {
 #results td {
     background-color: #cda45e;
     color: #F5F5DC;
+}
+
+#results .table {
+    margin-bottom: 0;
 }
 
 #results .nav-link.active {

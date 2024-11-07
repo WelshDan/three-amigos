@@ -20,46 +20,26 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="gs" role="tabpanel" aria-labelledby="gs-tab">
-                    <table class="table text-center mt-3">
+                    <table class="table-sm text-center mt-3">
                         <thead>
                             <tr class="font-weight-bold">
-                                <th scope="col" class="w-25">Date</th>
+                                <th scope="col" class="col-1">Date</th>
                             </tr>
                         </thead>
                         <tbody id="gs-dates-list">
-                            {% if sheet_data %}
-                                {% for row in sheet_data %}
-                                <tr>
-                                    <td>{{ row.GS }}</td>
-                                </tr>
-                                {% endfor %}
-                            {% else %}
-                                <tr>
-                                    <td colspan="4">No results available</td>
-                                </tr>
-                            {% endif %}
+
                         </tbody>
                     </table>
                 </div>
                 <div class="tab-pane fade" id="city" role="tabpanel" aria-labelledby="city-tab">
-                    <table class="table text-center mt-3">
+                    <table class="table-sm text-center mt-3">
                         <thead>
                             <tr class="font-weight-bold">
-                                <th scope="col" class="w-25">Date</th>
+                                <th scope="col" class="col-1">Date</th>
                             </tr>
                         </thead>
                         <tbody id="city-dates-list">
-                            {% if sheet_data %}
-                                {% for row in sheet_data %}
-                                    <tr>
-                                        <td>{{ row.City }}</td>
-                                    </tr>
-                                {% endfor %}
-                            {% else %}
-                                <tr>
-                                    <td colspan="4">No results available</td>
-                                </tr>
-                            {% endif %}
+
                         </tbody>
                     </table>
                 </div>
