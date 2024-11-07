@@ -294,6 +294,10 @@ h6 {
     text-align: center;
 }
 
+#about-us p {
+    color: #F5F5DC;
+}
+
 #about-us h2 {
     text-align: center;
     color: #fff;
