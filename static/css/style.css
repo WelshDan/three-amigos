@@ -492,6 +492,16 @@ thead th {
 
 /*---------- End of Results page ----------*/
 
+/*---------- Enquiry page ----------*/
+
+#enquiry {
+    padding-top: 13rem;
+    background: #cda45e;
+    color: #fff;
+}
+
+/*---------- End of Enquiry page ----------*/
+
 /*----- Footer -----*/
 #footer {
     background: #000000;

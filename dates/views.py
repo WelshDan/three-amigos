@@ -16,6 +16,9 @@ def get_index(request):
 def get_base(request):
     return render(request, 'base.html')
 
+def get_enquiry(request):
+    return render(request, 'enquiry.html')
+
 def upcoming_dates(request):
     api_id = 'fvi6b7rkv2z2b'
     tab_name = 'upcoming_quizzes'

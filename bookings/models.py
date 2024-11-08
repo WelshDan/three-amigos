@@ -69,7 +69,7 @@ class Enquiry(models.Model):
         blank=True,
     )
     enquiry_when = models.DateTimeField(default=timezone.now, blank=True, null=True)
-    enquiry_information = models.TextField(blank=True)
+    enquiry_information = models.TextField(max_length=1000, blank=True)
     enquiry_sent = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
