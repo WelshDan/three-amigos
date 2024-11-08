@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-REASONS = (
+OCCASIONS = (
     ('AW','After Work'),
     ('KO','Work Kick Off'),
     ('BP','Birthday Party'),
@@ -9,13 +9,13 @@ REASONS = (
     ('O','Other'),
 )
 
-TYPES = (
+THEMES = (
     ('TAQ','Three Amigos Quiz'),
-    ('S/T','Specific/Themed Quiz'),
+    ('ST','Specific/Themed Quiz'),
 )
 
 LOCATIONS = (
-    ('TS','The Snug (15-25ppl)'),
+    ('TS','The Snug (12-20ppl)'),
     ('WP','Wirströms Pub (25-100ppl)'),
     ('W','At your workplace'),
     ('OL','Other Location'),
@@ -23,26 +23,54 @@ LOCATIONS = (
 
 class Booking(models.Model):
     booking_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=150, blank= False)
-    email = models.EmailField(max_length=150, unique=True, blank=False)
-    company = models.CharField(max_length=150)
-    reason = models.CharField(
+    booking_name = models.CharField(max_length=150)
+    booking_email = models.EmailField(max_length=150)
+    booking_company = models.CharField(max_length=150)
+    booking_occasion = models.CharField(
         max_length=30,
-        choices=REASONS,
+        choices=OCCASIONS,
+        null=False,
         )
-    quiz_type = models.CharField(
+    booking_theme = models.CharField(
         max_length=20,
-        choices=TYPES,
+        choices=THEMES,
     )
-    quizzers = models.IntegerField()
-    where = models.CharField(
+    booking_number_of_quizzers = models.IntegerField()
+    booking_location = models.CharField(
         max_length=30,
         choices=LOCATIONS,
     )
-    when = models.DateTimeField(default=timezone.now)
-    sent = models.DateTimeField(auto_now_add=True)
+    booking_when = models.DateTimeField(default=timezone.now)
+    booking_sent = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"Booking #{self.booking_id} - Name {self.name} - Email {self.email}"
-        "- Company {self.company} - Reason {self.reason} - Type of Quiz {self.quiz_type}"
-        "- No.of Quizzers {self.quizzers} - Location {self.where} - Date/Time {self.when}"
+        return f"Booking #{self.booking_id} - Name {self.booking_name} - Email {self.booking_email}"
+
+
+class Enquiry(models.Model):
+    enquiry_id = models.AutoField(primary_key=True)
+    enquiry_name = models.CharField(max_length=150, blank= False)
+    enquiry_email = models.EmailField(max_length=150, blank=False)
+    enquiry_company = models.CharField(max_length=150, blank=True)
+    enquiry_occasion = models.CharField(
+        max_length=30,
+        choices=OCCASIONS,
+        blank=True,
+        )
+    enquiry_theme = models.CharField(
+        max_length=20,
+        choices=THEMES,
+        blank=True,
+    )
+    enquiry_number_of_quizzers = models.IntegerField(blank=True, null=True)
+    enquiry_location = models.CharField(
+        max_length=30,
+        choices=LOCATIONS,
+        blank=True,
+    )
+    enquiry_when = models.DateTimeField(default=timezone.now, blank=True, null=True)
+    enquiry_information = models.TextField(blank=True)
+    enquiry_sent = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Booking #{self.enquiry_id} - Name {self.enquiry_name} - Email {self.enquiry_email}"
