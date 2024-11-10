@@ -49,7 +49,9 @@ h6 {
 .btn-book,
 .btn-enquire,
 .btn-results,
-.btn-dates {
+.btn-dates,
+.btn-clear,
+.btn-send {
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -68,11 +70,19 @@ h6 {
 .btn-book:hover,
 .btn-enquire:hover,
 .btn-results:hover,
-.btn-dates:hover {
+.btn-dates:hover,
+.btn-send:hover {
     background: #429e74;
     color: #fff;
     text-decoration: none;
 }
+
+.btn-clear:hover {
+    background: yellow;
+    color: #9e7442;
+    text-decoration: none;
+}
+
 /*--- End Buttons ---*/
 
 /*----- Navbar menu -----*/
@@ -496,8 +506,21 @@ thead th {
 
 #enquiry {
     padding-top: 13rem;
+    padding-bottom: 3rem;
     background: #cda45e;
     color: #fff;
+}
+
+#enquiry h1 {
+    padding: 20px;
+}
+
+#enquiry h1,
+#enquiry h4,
+#enquiry h5,
+#enquiry h6 {
+    text-align: center;
+    color: #F5F5DC;
 }
 
 /*---------- End of Enquiry page ----------*/

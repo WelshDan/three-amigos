@@ -20,3 +20,11 @@ def get_enquiry(request):
 
 def error_404(request, exception):
         return render(request, '404.html')
+
+def enquiry_form(request):
+        context = {
+                'locations': LOCATIONS,
+                'occassions': OCCASIONS,
+                'themes': THEMES,
+        }
+        return render(request, 'enquiry.html', context)
