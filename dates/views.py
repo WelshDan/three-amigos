@@ -19,6 +19,14 @@ def get_base(request):
 def get_enquiry(request):
     return render(request, 'enquiry.html')
 
+def enquiry_form(request):
+    context = {
+            'locations': LOCATIONS,
+            'occasions': OCCASIONS,
+            'themes': THEMES,
+    }
+    return render(request, 'enquiry.html', context)
+
 def upcoming_dates(request):
     api_id = 'fvi6b7rkv2z2b'
     tab_name = 'upcoming_quizzes'

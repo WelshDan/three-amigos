@@ -23,24 +23,26 @@ LOCATIONS = (
 
 class Booking(models.Model):
     booking_id = models.AutoField(primary_key=True)
-    booking_name = models.CharField(max_length=150)
-    booking_email = models.EmailField(max_length=150)
+    booking_name = models.CharField(max_length=150, blank= False)
+    booking_email = models.EmailField(max_length=150, blank= False)
     booking_company = models.CharField(max_length=150)
     booking_occasion = models.CharField(
         max_length=30,
         choices=OCCASIONS,
-        null=False,
+        blank= False,
         )
     booking_theme = models.CharField(
         max_length=20,
         choices=THEMES,
+        blank= False,
     )
     booking_number_of_quizzers = models.IntegerField()
     booking_location = models.CharField(
         max_length=30,
         choices=LOCATIONS,
+        blank= False,
     )
-    booking_when = models.DateTimeField(default=timezone.now)
+    booking_when = models.DateTimeField(default=timezone.now, blank= False)
     booking_sent = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
