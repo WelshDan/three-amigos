@@ -25,8 +25,8 @@ urlpatterns = [
     path('base/', views.get_base, name='base'),
     path('dates/', views.get_dates, name='dates'),
     path('results/', views.get_results, name='results'),
-    path('enquiry/', views.get_enquiry, name='enquiry'),
     path('bookings/', include('bookings.urls', namespace="bookings")),
+    path('enquiry/', include('bookings.urls_enquiry', namespace="enquiry")),
     path('dates/', include('dates.urls')),
 ]
 

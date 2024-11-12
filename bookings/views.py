@@ -22,9 +22,12 @@ def error_404(request, exception):
     return render(request, '404.html')
 
 def enquiry_form(request):
+    if request.method == "POST":
+        print(request.POST)
+
     context = {
             'locations': LOCATIONS,
             'occasions': OCCASIONS,
             'themes': THEMES,
     }
-    return render(request, 'enquiry.html', context)
+    return render(request, 'enquiry_form.html', context)
