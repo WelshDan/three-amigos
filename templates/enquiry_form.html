@@ -1,58 +1,19 @@
-<div class="enquiry-form">
-    <form action="{% url 'enquiry:enquiry_form' %}" method="post">
-        {% csrf_token %}
-        <div class="row g-3">
-            <div class="col-md-6">
-                <label for="inputName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="inputName" name="enquiry_name">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" name="enquiry_email">
-            </div>
-            <div class="col-md-4">
-                <label for="inputOccasion" size="5" class="form-label">Occasion</label>
-                <select id="inputOccasion" name="enquiry_occasion" class="form-select" name="occasion">
-                    {% for selection, choice in occasions %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="inputLocation" size="4" class="form-label">Preferred Location</label>
-                <select id="inputLocation" name="enquiry_location" class="form-select" name="location">
-                    {% for selection, choice in locations %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="inputTheme" size="2" class="form-label">Preferred Theme</label>
-                <select id="inputTheme" name="enquiry_theme" class="form-select" name="theme">
-                    {% for selection, choice in themes %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div>
-                <label for="number" class="form-label">Example range</label>
-                <input type="number" name="enquiry_number_of_quizzers=" form-range" min="15" max="120" id="number">
-            </div>
-            <div class="col-md-6">
-                <label for="inputWhen" class="form-label">Preferred Date</label>
-                <input type="datetime" name="enquiry_when" class="form-control" id="inputWhen" name="when">
-            </div>
-            <div class="col-md-12">
-                <label for="inputText" class="form-label">Description</label>
-                <textarea class="form-control" name="enquiry_information" id="inputText" rows="5"
-                    name="description"></textarea>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn-clear">Clear Form</button>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn-send">Send Enquiry</button>
-            </div>
-        </div>
-    </form>
-</div>
+{% extends "base.html" %}
+
+{% load static %}
+
+<form action="{% url 'enquiry:enquiry_form' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-errors">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn-clear" onclick="document.getElementById('enquiry-form').reset()">Clear Form</button>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn-send">Send Enquiry</button>
+    </div>
+</form>

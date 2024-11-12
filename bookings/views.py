@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Booking, OCCASIONS, THEMES, LOCATIONS
+from .models import Booking
+from .models import OCCASIONS, LOCATIONS, THEMES
+from .forms import EnquiryForm
+from django.http import HttpResponse
+
 
 # Create your views here.
 
@@ -22,12 +26,24 @@ def error_404(request, exception):
     return render(request, '404.html')
 
 def enquiry_form(request):
-    if request.method == "POST":
-        print(request.POST)
-
     context = {
-            'locations': LOCATIONS,
-            'occasions': OCCASIONS,
-            'themes': THEMES,
+        'locations': LOCATIONS,
+        'occasions': OCCASIONS,
+        'themes': THEMES,
     }
-    return render(request, 'enquiry_form.html', context)
+    print(request.POST)
+    print("Occasions:", OCCASIONS)
+    print("Locations:", LOCATIONS)
+    print("Themes:", THEMES)
+    if request.method == "POST":
+        form = EnquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Thanks for your enquiry. Our answer will be sent via email")
+        else:
+            return render(request, 'enquiry_form.html', {'form': form, 'error': 'Please fill in the necessary details', })
+    
+    else:
+        form = EnquiryForm()
+
+    return render(request, 'enquiry_form.html', {'form': form})
