@@ -61,3 +61,17 @@
         {% endif %}
     </div>
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Form loaded");
+
+        // Check select options for each field
+        document.querySelectorAll("select").forEach(select => {
+            console.log(`Options for ${select.name}:`);
+            select.querySelectorAll("option").forEach(option => {
+                console.log(`- ${option.value}: ${option.text}`);
+            });
+        });
+    });
+</script>

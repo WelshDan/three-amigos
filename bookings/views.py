@@ -17,8 +17,5 @@ def get_dates(request):
 def get_results(request):
     return render(request, 'results.html')
 
-def get_enquiry(request):
-    return render(request, 'enquiry.html')
-
 def error_404(request, exception):
     return render(request, '404.html')

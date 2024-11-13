@@ -24,16 +24,23 @@ def error_404(request, exception):
     return render(request, '404.html')
 
 def enquiry_form(request):
+    print("View called with request method:", request.method)
+
     if request.method == "POST":
         form = EnquiryForm(request.POST)
+        print("Form data received in POST request:", request.POST)
+
         if form.is_valid():
+            print("Form is valid")
             form.save()
             return HttpResponse("Thanks for your enquiry. Our answer will be sent via email")
 
         else:
+            print("Form is not valid:", form.errors)
             return render(request, 'enquiry_form.html', {'form': form, 'error': 'Please fill in the necessary details'})
     
     else:
         form = EnquiryForm()
+        print("New form created for GET request")
 
     return render(request, 'enquiry_form.html', {'form': form})
