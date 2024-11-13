@@ -28,7 +28,9 @@ def enquiry_form(request):
 
     if request.method == "POST":
         form = EnquiryForm(request.POST)
-        print("Form data received in POST request:", request.POST)
+        print("Occasion Choices:", form.fields['enquiry_occasion'].choices)
+        print("Theme Choices:", form.fields['enquiry_theme'].choices)
+        print("Location Choices:", form.fields['enquiry_location'].choices)
 
         if form.is_valid():
             print("Form is valid")
@@ -41,6 +43,9 @@ def enquiry_form(request):
     
     else:
         form = EnquiryForm()
-        print("New form created for GET request")
+        print("View-level check of form choices:")
+        print("Occasions:", form.fields['enquiry_occasion'].choices)
+        print("Themes:", form.fields['enquiry_theme'].choices)
+        print("Locations:", form.fields['enquiry_location'].choices)
 
     return render(request, 'enquiry_form.html', {'form': form})

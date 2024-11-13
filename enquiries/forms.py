@@ -1,7 +1,29 @@
 from django import forms
 from .models import Enquiry
 
+
 class EnquiryForm(forms.ModelForm):
+
+    OCCASIONS = (
+        ('AW','After Work'),
+        ('KO','Work Kick Off'),
+        ('BP','Birthday Party'),
+        ('SP','Surprise Party'),
+        ('O','Other'),
+    )
+
+    THEMES = (
+        ('TAQ','Three Amigos Quiz'),
+        ('ST','Specific/Themed Quiz'),
+    )
+
+    LOCATIONS = (
+        ('TS','The Snug (12-20ppl)'),
+        ('WP','Wirströms Pub (25-100ppl)'),
+        ('W','At your workplace'),
+        ('OL','Other Location'),
+    )
+
     class Meta:
         model = Enquiry
         fields = [
@@ -10,5 +32,8 @@ class EnquiryForm(forms.ModelForm):
             'enquiry_when', 'enquiry_information']
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        print("Form fields initialized:", self.fields)
+        super(EnquiryForm, self).__init__(*args, **kwargs)
+        print("Form fields initialized with choices:")
+        print("Occasions:", self.fields['enquiry_occasion'].choices)
+        print("Themes:", self.fields['enquiry_theme'].choices)
+        print("Locations:", self.fields['enquiry_location'].choices)

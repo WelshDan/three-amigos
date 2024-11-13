@@ -5,47 +5,47 @@
         <p>Occasions: {{ occasions }}</p>
         <p>Themes: {{ themes }}</p>
         <div class="form-group col-md-6">
-            <label for="inputName" class="form-label">Name</label>
+            <label for="id_enquiry_occasion" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputName" name="enquiry_name">
         </div>
         <div class="col-md-6">
-            <label for="inputEmail" class="form-label">Email</label>
+            <label for="id_enquiry_email" class="form-label">Email</label>
             <input type="email" class="form-control" id="inputEmail" name="enquiry_email">
         </div>
         <div class="col-md-4">
-            <label for="inputOccasion" size="5" class="form-label">Occasion</label>
+            <label for="id_enquiry_occasion" size="5" class="form-label">Occasion</label>
             <select id="inputOccasion" class="form-select" name="enquiry_occasion">
-                {% for selection, choice in occasions %}
+                {% for selection, choice in form.enquiry_occasion.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-md-4">
-            <label for="inputLocation" size="4" class="form-label">Preferred Location</label>
+            <label for="id_enquiry_location" size="4" class="form-label">Preferred Location</label>
             <select id="inputLocation" class="form-select" name="enquiry_location">
-                {% for selection, choice in locations %}
+                {% for selection, choice in form.enquiry_location.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-md-4">
-            <label for="inputTheme" size="2" class="form-label">Preferred Theme</label>
+            <label for="id_enquiry_theme" size="2" class="form-label">Preferred Theme</label>
             <select id="inputTheme" class="form-select" name="enquiry_theme">
-                {% for selection, choice in themes %}
+                {% for selection, choice in form.enquiry_theme.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div>
-            <label for="number" class="form-label">Example range</label>
+            <label for="id_enquiry_number_of_quizzers" class="form-label">Example range</label>
             <input type="number" class="form-range" min="15" max="120" id="number" name="enquiry_number_of_quizzers">
         </div>
         <div class="col-md-6">
-            <label for="inputWhen" class="form-label">Preferred Date</label>
+            <label for="id_enquiry_when" class="form-label">Preferred Date</label>
             <input type="datetime" class="form-control" id="inputWhen" name="enquiry_when">
         </div>
         <div class="col-md-12">
-            <label for="inputText" class="form-label">Description</label>
+            <label for="id_enquiry_description" class="form-label">Description</label>
             <textarea class="form-control" id="inputText" rows="5" name="enquiry_description"></textarea>
         </div>
         <div class="col-12">
