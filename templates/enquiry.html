@@ -7,9 +7,9 @@
 <!-- ===== Enquiry Section ===== -->
     <section id="enquiry">
         <h1>Enquiry Form</h1>
-        {% for location in locations %}
-            <p>{{ location }}</p>
-        {% endfor %}
+        <p>Locations: {{ locations }}</p>
+        <p>Occasions: {{ occasions }}</p>
+        <p>Themes: {{ themes }}</p>
         <div class="container">
             {% include 'enquiry_form.html' %}
         </div>

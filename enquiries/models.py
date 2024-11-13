@@ -1,28 +1,28 @@
 from django.db import models
 from django.utils import timezone
 
-OCCASIONS = (
-    ('AW','After Work'),
-    ('KO','Work Kick Off'),
-    ('BP','Birthday Party'),
-    ('SP','Surprise Party'),
-    ('O','Other'),
-)
-
-THEMES = (
-    ('TAQ','Three Amigos Quiz'),
-    ('ST','Specific/Themed Quiz'),
-)
-
-LOCATIONS = (
-    ('TS','The Snug (12-20ppl)'),
-    ('WP','Wirströms Pub (25-100ppl)'),
-    ('W','At your workplace'),
-    ('OL','Other Location'),
-)
-
 
 class Enquiry(models.Model):
+    OCCASIONS = (
+        ('AW','After Work'),
+        ('KO','Work Kick Off'),
+        ('BP','Birthday Party'),
+        ('SP','Surprise Party'),
+        ('O','Other'),
+    )
+
+    THEMES = (
+        ('TAQ','Three Amigos Quiz'),
+        ('ST','Specific/Themed Quiz'),
+    )
+
+    LOCATIONS = (
+        ('TS','The Snug (12-20ppl)'),
+        ('WP','Wirströms Pub (25-100ppl)'),
+        ('W','At your workplace'),
+        ('OL','Other Location'),
+    )
+
     enquiry_id = models.AutoField(primary_key=True)
     enquiry_name = models.CharField(max_length=150, blank= False)
     enquiry_email = models.EmailField(max_length=150, blank=False)
