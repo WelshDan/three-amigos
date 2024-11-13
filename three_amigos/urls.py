@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from bookings import views
 from dates import views
+from enquiries import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,7 @@ urlpatterns = [
     path('dates/', views.get_dates, name='dates'),
     path('results/', views.get_results, name='results'),
     path('bookings/', include('bookings.urls', namespace="bookings")),
-    path('enquiry/', include('bookings.urls_enquiry', namespace="enquiry")),
+    path('enquiry/', include('enquiries.urls', namespace="enquiry")),
     path('dates/', include('dates.urls')),
 ]
 
