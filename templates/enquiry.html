@@ -12,4 +12,16 @@
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const clearButton = document.getElementById('btn-clear');
+            if (clearButton) {
+                clearButton.addEventListener('click', function () {
+                    // Reset the form fields
+                    document.getElementById('enquiry-form').reset();
+                });
+            }
+        });
+    </script>
+
 {% endblock %}

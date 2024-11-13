@@ -26,24 +26,28 @@ def error_404(request, exception):
     return render(request, '404.html')
 
 def enquiry_form(request):
+
     context = {
         'locations': LOCATIONS,
         'occasions': OCCASIONS,
         'themes': THEMES,
     }
-    print(request.POST)
-    print("Occasions:", OCCASIONS)
-    print("Locations:", LOCATIONS)
-    print("Themes:", THEMES)
+
     if request.method == "POST":
         form = EnquiryForm(request.POST)
+        context['form'] = form
+        print("Context:", context)
+
         if form.is_valid():
             form.save()
             return HttpResponse("Thanks for your enquiry. Our answer will be sent via email")
+
         else:
-            return render(request, 'enquiry_form.html', {'form': form, 'error': 'Please fill in the necessary details', })
+            context.update({'form': form, 'error': 'Please fill in the necessary details'})
+            return render(request, 'enquiry_form.html', context)
     
     else:
         form = EnquiryForm()
+        conext['form'] = form
 
-    return render(request, 'enquiry_form.html', {'form': form})
+    return render(request, 'enquiry_form.html', context)

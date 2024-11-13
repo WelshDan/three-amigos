@@ -3,69 +3,58 @@
     <div class="form-group row g-3">
         <div class="form-group col-md-6">
             <label for="inputName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputName" name="name">
+            <input type="text" class="form-control" id="inputName" name="enquiry_name">
         </div>
         <div class="col-md-6">
             <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" name="email">
+            <input type="email" class="form-control" id="inputEmail" name="enquiry_email">
         </div>
         <div class="col-md-4">
             <label for="inputOccasion" size="5" class="form-label">Occasion</label>
-            <select id="inputOccasion" name="occasion" class="form-select" name="occasion">
+            <select id="inputOccasion" class="form-select" name="enquiry_occasion">
                 {% for selection, choice in occasions %}
-                <option value="{{ selection }}">{{ choice }}</option>
+                    <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-md-4">
             <label for="inputLocation" size="4" class="form-label">Preferred Location</label>
-            <select id="inputLocation" class="form-select" name="location">
+            <select id="inputLocation" class="form-select" name="enquiry_location">
                 {% for selection, choice in locations %}
-                <option value="{{ selection }}">{{ choice }}</option>
+                    <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-md-4">
             <label for="inputTheme" size="2" class="form-label">Preferred Theme</label>
-            <select id="inputTheme" class="form-select" name="theme">
+            <select id="inputTheme" class="form-select" name="enquiry_theme">
                 {% for selection, choice in themes %}
-                <option value="{{ selection }}">{{ choice }}</option>
+                    <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
             </select>
         </div>
         <div>
             <label for="number" class="form-label">Example range</label>
-            <input type="number" class="form-range" min="15" max="120" id="number">
+            <input type="number" class="form-range" min="15" max="120" id="number" name="enquiry_number_of_quizzers">
         </div>
         <div class="col-md-6">
             <label for="inputWhen" class="form-label">Preferred Date</label>
-            <input type="datetime" class="form-control" id="inputWhen" name="when">
+            <input type="datetime" class="form-control" id="inputWhen" name="enquiry_when">
         </div>
         <div class="col-md-12">
             <label for="inputText" class="form-label">Description</label>
-            <textarea class="form-control" id="inputText" rows="5" name="description"></textarea>
+            <textarea class="form-control" id="inputText" rows="5" name="enquiry_description"></textarea>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn-clear">Clear Form</button>
+            <button type="reset" class="btn-clear">Clear Form</button>
         </div>
         <div class="col-12">
             <button type="submit" class="btn-send">Send Enquiry</button>
-        </div>
-        <div>
-            <p>Occasions: {{ occasions }}</p>
-            <p>Themes: {{ themes }}</p>
-            <p>Locations {{ locations }}</p>
         </div>
     </div>
     <div class="form-errors">
         {% if error %}
             <p class="error">{{ form.field_name.errors }}</p>
         {% endif %}
-    </div>
-    <div class="col-12">
-        <button type="reset" class="btn-clear">Clear Form</button>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn-send">Send Enquiry</button>
     </div>
 </form>
