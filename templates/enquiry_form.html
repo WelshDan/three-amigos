@@ -1,6 +1,11 @@
 <form id="enquiry-form" action="{% url 'enquiry:enquiry_form' %}" method="post">
     {% csrf_token %}
     <div class="form-group row g-3">
+        {% for location in locations %}
+            <p>{{ location.1 }}</p>
+        {% empty %}
+            <p>No locations available</p>
+        {% endfor %}
         <div class="form-group col-md-6">
             <label for="inputName" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputName" name="enquiry_name">
