@@ -1,20 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
 <form id="enquiry-form" action="{% url 'enquiry:enquiry_form' %}" method="post">
     {% csrf_token %}
     <div class="form-group row g-3">
-        <p>Locations: {{ locations }}</p>
-        <p>Occasions: {{ occasions }}</p>
-        <p>Themes: {{ themes }}</p>
         <div class="form-group col-md-6">
-            <label for="id_enquiry_occasion" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputName" name="enquiry_name">
+            <label for="id_enquiry_name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="id_enquiry_name" name="enquiry_name">
         </div>
         <div class="col-md-6">
             <label for="id_enquiry_email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" name="enquiry_email">
+            <input type="email" class="form-control" id="id_enquiry_email" name="enquiry_email">
         </div>
         <div class="col-md-4">
             <label for="id_enquiry_occasion" size="5" class="form-label">Occasion</label>
-            <select id="inputOccasion" class="form-select" name="enquiry_occasion">
+            <select id="id_enquiry_occasion" class="form-select" name="enquiry_occasion">
                 {% for selection, choice in form.enquiry_occasion.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
@@ -22,7 +21,7 @@
         </div>
         <div class="col-md-4">
             <label for="id_enquiry_location" size="4" class="form-label">Preferred Location</label>
-            <select id="inputLocation" class="form-select" name="enquiry_location">
+            <select id="id_enquiry_location" class="form-select" name="enquiry_location">
                 {% for selection, choice in form.enquiry_location.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
@@ -30,7 +29,7 @@
         </div>
         <div class="col-md-4">
             <label for="id_enquiry_theme" size="2" class="form-label">Preferred Theme</label>
-            <select id="inputTheme" class="form-select" name="enquiry_theme">
+            <select id="id_enquiry_theme" class="form-select" name="enquiry_theme">
                 {% for selection, choice in form.enquiry_theme.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                 {% endfor %}
@@ -38,15 +37,15 @@
         </div>
         <div>
             <label for="id_enquiry_number_of_quizzers" class="form-label">Example range</label>
-            <input type="number" class="form-range" min="15" max="120" id="number" name="enquiry_number_of_quizzers">
+            <input type="number" class="form-range" min="15" max="120" id="id_enquiry_number_of_quizzers" name="enquiry_number_of_quizzers">
         </div>
         <div class="col-md-6">
             <label for="id_enquiry_when" class="form-label">Preferred Date</label>
-            <input type="datetime" class="form-control" id="inputWhen" name="enquiry_when">
+            <input type="datetime" class="form-control" id="id_enquiry_when" name="enquiry_when">
         </div>
         <div class="col-md-12">
             <label for="id_enquiry_description" class="form-label">Description</label>
-            <textarea class="form-control" id="inputText" rows="5" name="enquiry_description"></textarea>
+            <textarea class="form-control" id="id_enquiry_description" rows="5" name="enquiry_description"></textarea>
         </div>
         <div class="col-12">
             <button type="reset" class="btn-clear">Clear Form</button>
@@ -61,17 +60,3 @@
         {% endif %}
     </div>
 </form>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("Form loaded");
-
-        // Check select options for each field
-        document.querySelectorAll("select").forEach(select => {
-            console.log(`Options for ${select.name}:`);
-            select.querySelectorAll("option").forEach(option => {
-                console.log(`- ${option.value}: ${option.text}`);
-            });
-        });
-    });
-</script>

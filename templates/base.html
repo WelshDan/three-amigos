@@ -1,9 +1,7 @@
-{% load static %}
-
-{% url 'index' as index_url %}
-
 <!DOCTYPE html>
 <html lang="en">
+
+{% url 'index' as index_url %}
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <title>{% block head_title %}Three Amigos Quiz page{% endblock %}</title>
+    {% load static %}
     <meta content="One of Stockholm's oldest quiz team" name="description" />
     <meta content="AW Stockholm, aw, gamla stan, quiz, aw quiz, Stockholm quiz, pub quiz" name="keywords" />
 
     <!-- Favicons -->
-    <link rel="icon" href="{% static 'media/favicon-32.png' %}" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
     <link rel="apple-touch-icon" href="{% static 'media/apple-touch-icon.png' %}" />
 
     <!-- Google Fonts -->
@@ -44,7 +43,7 @@
                 <li class="nav-item dropdown d-lg-none">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                    Go to
+                    Go t
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'index' %}#hero">Home</a></li>
