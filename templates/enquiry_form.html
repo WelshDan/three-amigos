@@ -1,9 +1,9 @@
 {% extends "enquiry.html" %}
 {% block content %}
-<form id="enquiry-form" action="{% url 'enquiry:enquiry_form' %}" method="post">
+<form id="enquiry" action="{% url 'enquiry:enquiry_form' %}" method="post">
     {% csrf_token %}
     <div class="form-group row g-3">
-        <div class="form-group col-md-6">
+        <div class="col-md-6">
             <label for="id_enquiry_name" class="form-label">Name</label>
             <input type="text" class="form-control" id="id_enquiry_name" name="enquiry_name">
         </div>

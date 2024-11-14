@@ -47,10 +47,10 @@ h6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    padding-left: 10px;
 }
 
 .form-control, .form-select {
-    padding: 8px;
     border: 1px solid #F5F5DC;
     border-radius: 5px;
 }
