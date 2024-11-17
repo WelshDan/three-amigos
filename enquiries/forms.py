@@ -4,6 +4,11 @@ from .models import Enquiry
 
 class EnquiryForm(forms.ModelForm):
 
+    enquiry_when = forms.DateTimeField(
+    widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+    label="Preferred Date and Time"
+    )
+
     OCCASIONS = (
         ('AW','After Work'),
         ('KO','Work Kick Off'),
@@ -24,12 +29,14 @@ class EnquiryForm(forms.ModelForm):
         ('OL','Other Location'),
     )
 
+
     class Meta:
         model = Enquiry
         fields = [
             'enquiry_name', 'enquiry_email', 'enquiry_company', 'enquiry_occasion',
             'enquiry_theme', 'enquiry_number_of_quizzers', 'enquiry_location', 
             'enquiry_when', 'enquiry_information']
+
 
     def __init__(self, *args, **kwargs):
         super(EnquiryForm, self).__init__(*args, **kwargs)

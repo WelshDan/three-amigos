@@ -1,7 +1,9 @@
 {% extends "enquiry.html" %}
 {% block content %}
+
 <form id="enquiry" action="{% url 'enquiry:enquiry_form' %}" method="post">
     {% csrf_token %}
+    <h1>Enquiry Form</h1>
     <div class="form-group row g-3 d-flex justify-content-center">
         <div class="col-md-4">
             <label for="id_enquiry_name" class="form-label">Name:</label>
@@ -35,25 +37,26 @@
                 {% endfor %}
             </select>
         </div>
-        <div class="range col-md-4">
+        <div class="col-md-4">
+            <label for="id_enquiry_when" class="form-label">Preferred Date:</label>
+            <input type="datetime" class="form-control" id="id_enquiry_when" name="enquiry_when">
+        </div>
+        <div class="range col-md-8">
             <label for="id_enquiry_number_of_quizzers" class="form-label" step="any">
                 Select the estimated number of participants:
                 <div class="slider-value" id="range-value"></div>
             </label>
             <input type="range" class="form-range" min="15" max="120" value="15" step="5" id="id_enquiry_number_of_quizzers" name="enquiry_number_of_quizzers">
         </div>
-        <div class="col-md-6">
-            <label for="id_enquiry_when" class="form-label">Preferred Date:</label>
-            <input type="datetime" class="form-control" id="id_enquiry_when" name="enquiry_when">
-        </div>
-        <div class="col-md-12">
+        <div class="col-md-8">
             <label for="id_enquiry_description" class="form-label">Description:</label>
-            <textarea class="form-control" id="id_enquiry_description" rows="5" name="enquiry_description"></textarea>
+            <textarea class="form-control" id="id_enquiry_description" rows="5" name="enquiry_description"
+                placeholder="Please add any extra information here (max 1000 characters)"></textarea>
         </div>
-        <div class="col-12">
+        <div class="col-8">
             <button type="reset" class="btn-clear">Clear Form</button>
         </div>
-        <div class="col-12">
+        <div class="col-8">
             <button type="submit" class="btn-send">Send Enquiry</button>
         </div>
     </div>
