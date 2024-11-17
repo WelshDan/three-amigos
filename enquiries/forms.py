@@ -5,7 +5,10 @@ from .models import Enquiry
 class EnquiryForm(forms.ModelForm):
 
     enquiry_when = forms.DateTimeField(
-    widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+    widget=forms.DateTimeInput(
+        format='%d-%m-%Y %H:%M',
+        attrs={'type': 'datetime-local'}
+        ),
     label="Preferred Date and Time"
     )
 
