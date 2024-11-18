@@ -223,6 +223,26 @@ h6 {
 
 /*--- End Navbar ---*/
 
+/*----- Messages -----*/
+
+.alert-message {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.alert-message.success {
+    background-color: #bfcd5e;
+    color: #F5F5DC;
+}
+
+.alert-message.error {
+    background-color: #cd6d5e;
+    color: #F5F5DC;
+}
+
+/*--- End Navbar ---*/
+
 /*---------- Index page ----------*/
 
 /*----- Intro Section -----*/

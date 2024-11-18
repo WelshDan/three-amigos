@@ -4,6 +4,18 @@
 <form id="enquiry" action="{% url 'enquiry:enquiry_form' %}" method="post">
     {% csrf_token %}
     <h1>Enquiry Form</h1>
+
+    <!--- Messages --->
+    {% if messages %}
+        <div class="alert">
+            {% for message in messages %}
+                <div class="alert-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="form-group row g-3 d-flex justify-content-center">
         <div class="col-md-4">
             <label for="id_enquiry_name" class="form-label">Name:</label>
@@ -12,6 +24,10 @@
         <div class="col-md-4">
             <label for="id_enquiry_email" class="form-label">Email:</label>
             <input type="email" class="form-control" id="id_enquiry_email" name="enquiry_email" placeholder="*Required*">
+        </div>
+        <div class="col-md-4">
+            <label for="id_enquiry_company" class="form-label">Company:</label>
+            <input type="text" class="form-control" id="id_enquiry_company" name="enquiry_company">
         </div>
         <div class="col-md-4">
             <label for="id_enquiry_occasion" size="5" class="form-label">Occasion:</label>
@@ -40,8 +56,7 @@
         <div class="col-md-4">
             <label for="id_enquiry_when" class="form-label">Preferred Date & Time:</label>
             <input type="datetime-local" class="form-control" id="id_enquiry_when" name="enquiry_when"
-                placeholder="*Required - Click here to choose preferred date and start time"
-            >
+                placeholder="*Required - Click here to choose preferred date and start time">
         </div>
         <div class="range col-md-8">
             <label for="id_enquiry_number_of_quizzers" class="form-label" step="any">
@@ -86,7 +101,7 @@
             minDate: "today",
             minTime: "12:00",
             maxTime: "22:00",
-            dateFormat: "d-m-Y H:i",
+            dateFormat: "Y-m-d\\TH:i",
         });
     </script>
     
