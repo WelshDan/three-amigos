@@ -31,7 +31,7 @@ def enquiry_form(request):
             print("Form is valid")
             form.save()
             messages.success(request, "Thank you for your enquiry! We have received your message and will get back to you soon.")
-            return redirect("enquiry_form")
+            return redirect('enquiry:enquiry_form')
 
         else:
             print("Form is not valid:", form.errors)
