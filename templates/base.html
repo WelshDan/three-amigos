@@ -17,6 +17,9 @@
     <link rel="icon" href="{% static 'media/favicon.ico' %}" />
     <link rel="apple-touch-icon" href="{% static 'media/apple-touch-icon.png' %}" />
 
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +93,18 @@
 
     <main>
 
+        <!-- Messages -->
+        {% if messages %}
+            <div id="info-messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags}}">
+                        {{ message }}
+                        <button class="close-message-btn"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block content %}
         <!-- Main content goes here -->
         {% endblock content %}
@@ -114,6 +129,21 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous">
+    </script>
+
+    <!-- Messages JS function -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".close-message-btn").forEach (function (btn) {
+                btn.addEventListener("click", function () {
+                    const message = this.parentElement;
+                    message.style.opacity = 0;
+                    setTimeout(function() {
+                        message.style.display = "none";
+                    }, 200);
+                });
+            });
+        });
     </script>
 
 </body>

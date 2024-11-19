@@ -30,7 +30,7 @@ def enquiry_form(request):
         if form.is_valid():
             print("Form is valid")
             form.save()
-            messages.success(request, "Thank you for your enquiry! We have received your message and will get back to you soon.")
+            messages.success(request, "Thank you for your enquiry! We should soon receive a reply from threeamigosquiz@gmail.com ")
             return redirect('enquiry:enquiry_form')
 
         else:

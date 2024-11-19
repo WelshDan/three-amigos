@@ -224,21 +224,56 @@ h6 {
 /*--- End Navbar ---*/
 
 /*----- Messages -----*/
-
-.alert-message {
-    padding: 10px;
-    margin: 10px 0;
-    text-align: center;
+#info-messages {
+    position: fixed;
+    top: 10rem;
+    left: 10%;
+    z-index: 100;
+    width: 80%;
 }
 
-.alert-message.success {
+.message {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #F5F5DC;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: opacity 0.3s ease-out;
+}
+
+.message.info {
+    background-color: #5e87cd;
+    color: #F5F5DC;
+}
+
+.message.success {
+    background-color: #5ecda4;
+    color: #F5F5DC;
+}
+
+.message.error {
+    background-color: #cd6d5e;
+    color: #F5F5DC;
+}
+
+.message.warning {
     background-color: #bfcd5e;
     color: #F5F5DC;
 }
 
-.alert-message.error {
-    background-color: #cd6d5e;
-    color: #F5F5DC;
+.close-message-btn {
+    z-index: 101;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
 }
 
 /*--- End Navbar ---*/
