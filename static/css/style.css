@@ -44,10 +44,17 @@ h6 {
 }
 
 .form-group {
+    margin: 50px auto;
+    border: 2px solid #9e7442;
+    color: #9e7442;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 20px;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-control, .form-select {
@@ -64,6 +71,7 @@ h6 {
 .btn-dates,
 .btn-clear,
 .btn-send {
+    margin: 15px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.5px;
