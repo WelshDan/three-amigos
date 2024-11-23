@@ -43,25 +43,6 @@ h6 {
     font-family: "Cabin", serif;
 }
 
-.form-group {
-    margin: 50px auto;
-    border: 2px solid #9e7442;
-    color: #9e7442;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #F5F5DC;
-    width: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-control, .form-select {
-    border: 1px solid #F5F5DC;
-    border-radius: 5px;
-}
-
 /*--- End General ---*/
 
 /*----- Buttons -----*/
@@ -578,24 +559,36 @@ thead th {
 /*---------- End of Results page ----------*/
 
 /*---------- Enquiry page ----------*/
-
-#enquiry {
-    padding-top: 13rem;
-    padding-bottom: 3rem;
-    background: #cda45e;
-    color: #fff;
-}
-
 #enquiry h1 {
     padding: 20px;
+    text-align: center;
 }
 
-#enquiry h1,
 #enquiry h4,
 #enquiry h5,
 #enquiry h6 {
     text-align: center;
     color: #F5F5DC;
+}
+
+#enquiry {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #cda45e;
+}
+
+#enquiry-form {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid #9e7442;
+    color: #9e7442;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #id_enquiry_number_of_quizzers {

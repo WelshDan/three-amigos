@@ -1,78 +1,80 @@
 {% extends "enquiry.html" %}
 {% block content %}
 
-<form id="enquiry" action="{% url 'enquiry:enquiry_form' %}" method="post">
-    {% csrf_token %}
-    <h1>Enquiry Form</h1>
-    <div class="form-group row g-3 d-flex justify-content-center">
-        <div class="col-md-4">
-            <label for="id_enquiry_name" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="id_enquiry_name" name="enquiry_name" placeholder="*Required*">
+<div id="enquiry">
+    <form id="enquiry-form" action="{% url 'enquiry:enquiry_form' %}" method="post">
+        {% csrf_token %}
+        <h1>Enquiry Form</h1>
+        <div class="form-group row g-3 d-flex justify-content-center">
+            <div class="col-md-6">
+                <label for="id_enquiry_name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="id_enquiry_name" name="enquiry_name" placeholder="*Required*">
+            </div>
+            <div class="col-md-6">
+                <label for="id_enquiry_email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="id_enquiry_email" name="enquiry_email" placeholder="*Required*">
+            </div>
+            <div class="col-md-6">
+                <label for="id_enquiry_company" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="id_enquiry_company" name="enquiry_company">
+            </div>
+            <div class="col-md-6">
+                <label for="id_enquiry_occasion" size="5" class="form-label">Occasion:</label>
+                <select id="id_enquiry_occasion" class="form-select" name="enquiry_occasion">
+                    {% for selection, choice in form.enquiry_occasion.field.choices %}
+                        <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_enquiry_location" size="4" class="form-label">Preferred Location:</label>
+                <select id="id_enquiry_location" class="form-select" name="enquiry_location">
+                    {% for selection, choice in form.enquiry_location.field.choices %}
+                        <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_enquiry_theme" size="2" class="form-label">Preferred Theme:</label>
+                <select id="id_enquiry_theme" class="form-select" name="enquiry_theme">
+                    {% for selection, choice in form.enquiry_theme.field.choices %}
+                        <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-8">
+                <label for="id_enquiry_when" class="form-label">Preferred Date & Time:</label>
+                <input type="datetime-local" class="form-control" id="id_enquiry_when" name="enquiry_when"
+                    placeholder="*Required - Choose preferred date & time">
+            </div>
+            <div class="range col-md-8">
+                <label for="id_enquiry_number_of_quizzers" class="form-label" step="any">
+                    Select the estimated number of participants:
+                    <div class="slider-value" id="range-value"></div>
+                </label>
+                <input type="range" class="form-range" min="15" max="120" value="15" step="5" id="id_enquiry_number_of_quizzers" name="enquiry_number_of_quizzers">
+            </div>
+            <div class="col-md-8">
+                <label for="id_enquiry_description" class="form-label">Description:</label>
+                <textarea class="form-control" id="id_enquiry_description" rows="5" name="enquiry_description"
+                    placeholder="Please add any extra information here (max 1000 characters)">
+                </textarea>
+            </div>
+            <div class="col-6">
+                <button type="reset" class="btn-clear">Clear Form</button>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn-send">Send Enquiry</button>
+            </div>
         </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="id_enquiry_email" name="enquiry_email" placeholder="*Required*">
+        <div class="form-errors">
+            {% if error %}
+                <p class="error">{{ form.field_name.errors }}</p>
+            {% endif %}
         </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_company" class="form-label">Company:</label>
-            <input type="text" class="form-control" id="id_enquiry_company" name="enquiry_company">
-        </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_occasion" size="5" class="form-label">Occasion:</label>
-            <select id="id_enquiry_occasion" class="form-select" name="enquiry_occasion">
-                {% for selection, choice in form.enquiry_occasion.field.choices %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_location" size="4" class="form-label">Preferred Location:</label>
-            <select id="id_enquiry_location" class="form-select" name="enquiry_location">
-                {% for selection, choice in form.enquiry_location.field.choices %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_theme" size="2" class="form-label">Preferred Theme:</label>
-            <select id="id_enquiry_theme" class="form-select" name="enquiry_theme">
-                {% for selection, choice in form.enquiry_theme.field.choices %}
-                    <option value="{{ selection }}">{{ choice }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-4">
-            <label for="id_enquiry_when" class="form-label">Preferred Date & Time:</label>
-            <input type="datetime-local" class="form-control" id="id_enquiry_when" name="enquiry_when"
-                placeholder="*Required - Click here to choose preferred date and start time">
-        </div>
-        <div class="range col-md-8">
-            <label for="id_enquiry_number_of_quizzers" class="form-label" step="any">
-                Select the estimated number of participants:
-                <div class="slider-value" id="range-value"></div>
-            </label>
-            <input type="range" class="form-range" min="15" max="120" value="15" step="5" id="id_enquiry_number_of_quizzers" name="enquiry_number_of_quizzers">
-        </div>
-        <div class="col-md-8">
-            <label for="id_enquiry_description" class="form-label">Description:</label>
-            <textarea class="form-control" id="id_enquiry_description" rows="5" name="enquiry_description"
-                placeholder="Please add any extra information here (max 1000 characters)">
-            </textarea>
-        </div>
-        <div class="col-8">
-            <button type="reset" class="btn-clear">Clear Form</button>
-        </div>
-        <div class="col-8">
-            <button type="submit" class="btn-send">Send Enquiry</button>
-        </div>
-    </div>
-    <div class="form-errors">
-        {% if error %}
-            <p class="error">{{ form.field_name.errors }}</p>
-        {% endif %}
-    </div>
-</form>
-
+    </form>
+</div>
+    
     <script>
         const rangeInput = document.getElementById('id_enquiry_number_of_quizzers');
         const rangeValue = document.getElementById('range-value');
