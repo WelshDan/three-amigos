@@ -578,10 +578,12 @@ thead th {
     justify-content: center;
     gap: 1rem;
     background-color: #cda45e;
+    padding-top: 13rem;
+    padding-bottom: 5rem;
 }
 
 #enquiry-form {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     border: 2px solid #9e7442;
     color: #9e7442;
@@ -589,6 +591,23 @@ thead th {
     border-radius: 10px;
     background-color: #F5F5DC;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#enquiry-form .form-range {
+    width: 100%;
+}
+
+#enquiry-form .form-select {
+    padding: 10px 36px 10px 10px;
+}
+
+#enquiry-form .form-control {
+    padding: 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.enquiry-btns {
+    text-align: center;
 }
 
 #id_enquiry_number_of_quizzers {
