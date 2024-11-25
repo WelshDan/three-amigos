@@ -11,7 +11,7 @@
                     <h1>The Three Amigos Quiz</h1>
                     <h2><span>After Works</span> - <span>Parties</span> - <span>Kick offs</span></h2>
                     <div class="btns">
-                        <a href="{% url 'index' %}" class="btn-book">Book Private Quiz</a>
+                        <a href="{% url 'booking:booking_form' %}" class="btn-book">Book Private Quiz</a>
                         <a href="{% url 'enquiry:enquiry_form' %}" class="btn-enquire">Enquire about a Quiz</a>
                     </div>
                 </div>
@@ -70,7 +70,8 @@
                     for a multinational company at a local retreat.</p>
                     <p></p>
                     
-                    <p>Fill in an enquiry form to check availability or a booking form to book a quiz.</p></h4>
+                    <p>Fill in an <a href="{% url 'enquiry:enquiry_form' %}" class="about-us-links">enquiry form</a> to check availability
+                        or a <a href="{% url 'booking:booking_form' %}" class="about-us-links">booking form</a> to book a quiz.</p></h4>
                 </div>
             </div>
         </div>

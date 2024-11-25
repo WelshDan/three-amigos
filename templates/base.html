@@ -57,10 +57,10 @@
                     Go to
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'index' %}#hero">Home</a></li>
+                        <li><a class="dropdown-item" href="{% url 'index' %}#intro">Home</a></li>
                         <li><a class="dropdown-item" href="{% url 'dates' %}#dates">Dates</a></li>
                         <li><a class="dropdown-item" href="{% url 'results' %}#results">Results</a></li>
-                        <li><a class="dropdown-item" href="{% url 'index' %}#book">Book</a></li>
+                        <li><a class="dropdown-item" href="{% url 'booking:booking_form' %}#booking">Book</a></li>
                         <li><a class="dropdown-item" href="{% url 'enquiry:enquiry_form' %}#enquiry">Enquiry</a></li>
                         <li><a class="dropdown-item" href="{% url 'index' %}#info">Quiz Info</a></li>
                         <li><a class="dropdown-item" href="https://wirstromspub.se#wirstroms" target="_blank">Wirströms Pub</a></li>
@@ -76,7 +76,7 @@
                     <a class="nav-link d-none d-lg-block" href="{% url 'results' %}#results">Results</a>
                 </li>
                 <li>
-                    <a class="nav-link d-none d-lg-block" href="{% url 'index' %}#book">Book</a>
+                    <a class="nav-link d-none d-lg-block" href="{% url 'booking:booking_form' %}#book">Book</a>
                 </li>
                 <li>
                     <a class="nav-link d-none d-lg-block" href="{% url 'enquiry:enquiry_form' %}#enquiry">Enquiry</a>

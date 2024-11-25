@@ -36,13 +36,14 @@ class Booking(models.Model):
         choices=THEMES,
         blank= False,
     )
-    booking_number_of_quizzers = models.IntegerField()
     booking_location = models.CharField(
         max_length=30,
         choices=LOCATIONS,
         blank= False,
     )
+    booking_number_of_quizzers = models.IntegerField()
     booking_when = models.DateTimeField(default=timezone.now, blank= False)
+    booking_information = models.TextField(max_length=1000, blank=True)
     booking_sent = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
