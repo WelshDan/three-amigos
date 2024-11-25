@@ -1,0 +1,99 @@
+{% extends "booking.html" %}
+{% block content %}
+
+<div id="booking">
+    <form id="booking-form" action="{% url 'booking:booking_form' %}" method="post">
+        {% csrf_token %}
+        <h1>Booking Form</h1>
+        <div class="form-group row g-3 d-flex justify-content-center">
+            <div class="col-md-6">
+                <label for="id_booking_name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="id_booking_name" name="booking_name"
+                    placeholder="*Required*">
+            </div>
+            <div class="col-md-6">
+                <label for="id_booking_email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="id_booking_email" name="booking_email"
+                    placeholder="*Required*">
+            </div>
+            <div class="col-md-6">
+                <label for="id_booking_company" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="id_booking_company" name="booking_company">
+            </div>
+            <div class="col-md-6">
+                <label for="id_booking_occasion" size="5" class="form-label">Occasion:</label>
+                <select id="id_booking_occasion" class="form-select" name="booking_occasion">
+                    {% for selection, choice in form.booking_occasion.field.choices %}
+                    <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_booking_location" size="4" class="form-label">Preferred Location:</label>
+                <select id="id_booking_location" class="form-select" name="booking_location">
+                    {% for selection, choice in form.booking_location.field.choices %}
+                    <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_booking_theme" size="2" class="form-label">Preferred Theme:</label>
+                <select id="id_booking_theme" class="form-select" name="booking_theme">
+                    {% for selection, choice in form.booking_theme.field.choices %}
+                    <option value="{{ selection }}">{{ choice }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-8">
+                <label for="id_booking_when" class="form-label">Preferred Date & Time:</label>
+                <input type="datetime-local" class="form-control" id="id_booking_when" name="booking_when"
+                    placeholder="*Required - Choose preferred date & time">
+            </div>
+            <div class="range col-md-8">
+                <label for="id_booking_number_of_quizzers" class="form-label" step="any">
+                    Select the estimated number of participants:
+                    <div class="slider-value" id="range-value"></div>
+                </label>
+                <input type="range" class="form-range" min="15" max="120" value="15" step="5"
+                    id="id_booking_number_of_quizzers" name="booking_number_of_quizzers">
+            </div>
+            <div class="col-md-8">
+                <label for="id_booking_description" class="form-label">Description:</label>
+                <textarea class="form-control" id="id_booking_description" rows="5" name="booking_description"
+                    placeholder="Please add any extra information here (max 1000 characters)">
+                </textarea>
+            </div>
+            <div class="booking-btns col-6">
+                <button type="reset" class="btn-clear">Clear Form</button>
+                <button type="submit" class="btn-send">Send Enquiry</button>
+            </div>
+        </div>
+        <div class="form-errors">
+            {% if error %}
+            <p class="error">{{ form.field_name.errors }}</p>
+            {% endif %}
+        </div>
+    </form>
+</div>
+
+<script>
+    const rangeInput = document.getElementById('id_booking_number_of_quizzers');
+    const rangeValue = document.getElementById('range-value');
+
+    rangeInput.addEventListener('input', function () {
+        rangeValue.textContent = rangeInput.value;
+    });
+</script>
+<script>
+    flatpickr("#id_booking_when", {
+        enableTime: true,
+        time_24hr: true,
+        minuteIncrement: 15,
+        minDate: "today",
+        minTime: "12:00",
+        maxTime: "22:00",
+        dateFormat: "Y-m-d\\TH:i",
+    });
+</script>
+
+{% endblock %}
