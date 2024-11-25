@@ -8,7 +8,7 @@ class BookingForm(forms.ModelForm):
             format='%Y-%m-%dT%H:%M',
             attrs={'type': 'datetime-local'}
         ),
-        label="Preferred Date and Time"
+        label="Date and Time"
     )
 
     OCCASIONS = (

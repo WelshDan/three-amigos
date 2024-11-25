@@ -50,7 +50,7 @@ def booking_form(request):
             return redirect('booking:booking_form')
 
         else:
-            messages.error(request, "Please fill in the necessary details")
+            messages.error(request, "Please fill in the required fields")
             return render(request, 'booking_form.html', {'form': form})
     
     else:

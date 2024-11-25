@@ -5,15 +5,15 @@
     <form id="booking-form" action="{% url 'booking:booking_form' %}" method="post">
         {% csrf_token %}
         <h1>Booking Form</h1>
-        <h5>* = required fields</h5>
+        <h5>Required fields in BOLD</h5>
         <div class="form-group row g-3 d-flex justify-content-center">
             <div class="col-md-6">
-                <label for="id_booking_name" class="form-label">*Name:</label>
+                <label for="id_booking_name" class="form-label">NAME:</label>
                 <input type="text" class="form-control" id="id_booking_name" name="booking_name"
                     placeholder="*Required*">
             </div>
             <div class="col-md-6">
-                <label for="id_booking_email" class="form-label">*Email:</label>
+                <label for="id_booking_email" class="form-label">EMAIL:</label>
                 <input type="email" class="form-control" id="id_booking_email" name="booking_email"
                     placeholder="*Required*">
             </div>
@@ -22,15 +22,15 @@
                 <input type="text" class="form-control" id="id_booking_company" name="booking_company">
             </div>
             <div class="col-md-6">
-                <label for="id_booking_occasion" size="5" class="form-label">*Occasion:</label>
-                <select id="id_booking_occasion" class="form-select" name="booking_occasion">
+                <label for="id_booking_occasion" size="5" class="form-label">OCCASION:</label>
+                <select id="id_booking_occasion" class="form-select" name="booking_occasion" placeholder="*Required*">
                     {% for selection, choice in form.booking_occasion.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="id_booking_location" size="4" class="form-label">*Location:</label>
+                <label for="id_booking_location" size="4" class="form-label">LOCATION:</label>
                 <select id="id_booking_location" class="form-select" name="booking_location">
                     {% for selection, choice in form.booking_location.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
@@ -38,7 +38,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="id_booking_theme" size="2" class="form-label">*Theme:</label>
+                <label for="id_booking_theme" size="2" class="form-label">THEME:</label>
                 <select id="id_booking_theme" class="form-select" name="booking_theme">
                     {% for selection, choice in form.booking_theme.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
@@ -46,16 +46,16 @@
                 </select>
             </div>
             <div class="col-md-8">
-                <label for="id_booking_when" class="form-label">*Date & Time:</label>
+                <label for="id_booking_when" class="form-label">DATE & TIME:</label>
                 <input type="datetime-local" class="form-control" id="id_booking_when" name="booking_when"
                     placeholder="*Required - Choose preferred date & time">
             </div>
             <div class="range col-md-8">
                 <label for="id_booking_number_of_quizzers" class="form-label" step="any">
-                    *Select the estimated number of participants:
-                    <div class="slider-value" id="range-value"></div>
+                    NUMBER OF PARTICIPANTS:
+                    <div class="slider-value" id="range-value">Use the slider to choose a number</div>
                 </label>
-                <input type="range" class="form-range" min="15" max="120" value="15" step="5"
+                <input type="range" class="form-range" min="15" max="120" value="15" step="1"
                     id="id_booking_number_of_quizzers" name="booking_number_of_quizzers">
             </div>
             <div class="col-md-8">
@@ -94,6 +94,35 @@
         minTime: "12:00",
         maxTime: "22:00",
         dateFormat: "Y-m-d\\TH:i",
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const locationLimit = document.getElementById("id_booking_location");
+        const slider = document.getElementById("id_booking_number_of_quizzers");
+
+        const setLimits = {
+            "TS": { min: 12, max: 20 },
+            "WP": { min: 20, max: 100 },
+        };
+
+        locationLimit.addEventListener("change", function () {
+            const selectedLocation = this.value;
+            const limits = setLimits[selectedLocation];
+
+            if (limits) {
+                slider.min = limits.min;
+                slider.max = limits.max;
+
+                if (slider.value < limits.min || slider.value > limits.max) {
+                    slider.value = limits.min;
+                }
+            } else {
+                slider.min = 10;
+                slider.max = 150;
+                slider.value = 10;
+            }
+        });
     });
 </script>
 

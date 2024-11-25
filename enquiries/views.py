@@ -50,7 +50,7 @@ def enquiry_form(request):
             return redirect('enquiry:enquiry_form')
 
         else:
-            messages.error(request, "Please fill in the necessary details")
+            messages.error(request, "Please fill in the required fields")
             return render(request, 'enquiry_form.html', {'form': form})
     
     else:

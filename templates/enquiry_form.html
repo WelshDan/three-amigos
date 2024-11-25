@@ -5,14 +5,14 @@
     <form id="enquiry-form" action="{% url 'enquiry:enquiry_form' %}" method="post">
         {% csrf_token %}
         <h1>Enquiry Form</h1>
-        <h5>* = required fields</h5>
+        <h5>Required fields in BOLD</h5>
         <div class="form-group row g-3 d-flex justify-content-center">
             <div class="col-md-6">
-                <label for="id_enquiry_name" class="form-label">*Name:</label>
+                <label for="id_enquiry_name" class="form-label">NAME:</label>
                 <input type="text" class="form-control" id="id_enquiry_name" name="enquiry_name" placeholder="*Required*">
             </div>
             <div class="col-md-6">
-                <label for="id_enquiry_email" class="form-label">*Email:</label>
+                <label for="id_enquiry_email" class="form-label">EMAIL:</label>
                 <input type="email" class="form-control" id="id_enquiry_email" name="enquiry_email" placeholder="*Required*">
             </div>
             <div class="col-md-6">
@@ -44,13 +44,13 @@
                 </select>
             </div>
             <div class="col-md-8">
-                <label for="id_enquiry_when" class="form-label">*Preferred Date & Time:</label>
+                <label for="id_enquiry_when" class="form-label">PREFERRED DATE & TIME:</label>
                 <input type="datetime-local" class="form-control" id="id_enquiry_when" name="enquiry_when"
                     placeholder="*Required - Choose preferred date & time">
             </div>
             <div class="range col-md-8">
                 <label for="id_enquiry_number_of_quizzers" class="form-label" step="any">
-                    Select the estimated number of participants:
+                    Number of participants:
                     <div class="slider-value" id="range-value"></div>
                 </label>
                 <input type="range" class="form-range" min="15" max="120" value="15" step="5" id="id_enquiry_number_of_quizzers" name="enquiry_number_of_quizzers">
@@ -91,6 +91,35 @@
             minTime: "12:00",
             maxTime: "22:00",
             dateFormat: "Y-m-d\\TH:i",
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const locationLimit = document.getElementById("id_booking_location");
+            const slider = document.getElementById("id_booking_number_of_quizzers");
+
+            const setLimits = {
+                "TS": { min: 12, max: 20 },
+                "WP": { min: 20, max: 100 },
+            };
+
+            locationLimit.addEventListener("change", function () {
+                const selectedLocation = this.value;
+                const limits = setLimits[selectedLocation];
+
+                if (limits) {
+                    slider.min = limits.min;
+                    slider.max = limits.max;
+
+                    if (slider.value < limits.min || slider.value > limits.max) {
+                        slider.value = limits.min;
+                    }
+                } else {
+                    slider.min = 10;
+                    slider.max = 150;
+                    slider.value = 10;
+                }
+            });
         });
     </script>
     

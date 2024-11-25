@@ -16,7 +16,7 @@ THEMES = (
 
 LOCATIONS = (
     ('TS','The Snug (12-20ppl)'),
-    ('WP','Wirströms Pub (25-100ppl)'),
+    ('WP','Wirströms Pub (20-100ppl)'),
     ('W','At your workplace'),
     ('OL','Other Location'),
 )
