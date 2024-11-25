@@ -5,14 +5,15 @@
     <form id="booking-form" action="{% url 'booking:booking_form' %}" method="post">
         {% csrf_token %}
         <h1>Booking Form</h1>
+        <h5>* = required fields</h5>
         <div class="form-group row g-3 d-flex justify-content-center">
             <div class="col-md-6">
-                <label for="id_booking_name" class="form-label">Name:</label>
+                <label for="id_booking_name" class="form-label">*Name:</label>
                 <input type="text" class="form-control" id="id_booking_name" name="booking_name"
                     placeholder="*Required*">
             </div>
             <div class="col-md-6">
-                <label for="id_booking_email" class="form-label">Email:</label>
+                <label for="id_booking_email" class="form-label">*Email:</label>
                 <input type="email" class="form-control" id="id_booking_email" name="booking_email"
                     placeholder="*Required*">
             </div>
@@ -21,7 +22,7 @@
                 <input type="text" class="form-control" id="id_booking_company" name="booking_company">
             </div>
             <div class="col-md-6">
-                <label for="id_booking_occasion" size="5" class="form-label">Occasion:</label>
+                <label for="id_booking_occasion" size="5" class="form-label">*Occasion:</label>
                 <select id="id_booking_occasion" class="form-select" name="booking_occasion">
                     {% for selection, choice in form.booking_occasion.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
@@ -29,7 +30,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="id_booking_location" size="4" class="form-label">Preferred Location:</label>
+                <label for="id_booking_location" size="4" class="form-label">*Location:</label>
                 <select id="id_booking_location" class="form-select" name="booking_location">
                     {% for selection, choice in form.booking_location.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
@@ -37,7 +38,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="id_booking_theme" size="2" class="form-label">Preferred Theme:</label>
+                <label for="id_booking_theme" size="2" class="form-label">*Theme:</label>
                 <select id="id_booking_theme" class="form-select" name="booking_theme">
                     {% for selection, choice in form.booking_theme.field.choices %}
                     <option value="{{ selection }}">{{ choice }}</option>
@@ -45,13 +46,13 @@
                 </select>
             </div>
             <div class="col-md-8">
-                <label for="id_booking_when" class="form-label">Preferred Date & Time:</label>
+                <label for="id_booking_when" class="form-label">*Date & Time:</label>
                 <input type="datetime-local" class="form-control" id="id_booking_when" name="booking_when"
                     placeholder="*Required - Choose preferred date & time">
             </div>
             <div class="range col-md-8">
                 <label for="id_booking_number_of_quizzers" class="form-label" step="any">
-                    Select the estimated number of participants:
+                    *Select the estimated number of participants:
                     <div class="slider-value" id="range-value"></div>
                 </label>
                 <input type="range" class="form-range" min="15" max="120" value="15" step="5"

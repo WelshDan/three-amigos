@@ -566,19 +566,29 @@ thead th {
 
 /*---------- End of Results page ----------*/
 
-/*---------- Enquiry page ----------*/
+/*---------- Booking & Enquiry pages ----------*/
+/* Booking and enquiry forms use the same stylings */
+
+#booking h1,
 #enquiry h1 {
     padding: 20px;
     text-align: center;
 }
 
+#booking h4,
+#booking h6,
 #enquiry h4,
-#enquiry h5,
 #enquiry h6 {
     text-align: center;
     color: #F5F5DC;
 }
 
+#booking h5,
+#enquiry h5 {
+    color: #d9ba85
+}
+
+#booking,
 #enquiry {
     min-height: 100vh;
     display: flex;
@@ -590,6 +600,7 @@ thead th {
     padding-bottom: 5rem;
 }
 
+#booking-form,
 #enquiry-form {
     width: 80%;
     max-width: 70rem;
@@ -602,28 +613,33 @@ thead th {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#booking-form .form-range,
 #enquiry-form .form-range {
     width: 100%;
 }
 
+#booking-form .form-select,
 #enquiry-form .form-select {
     padding: 10px 36px 10px 10px;
 }
 
+#booking-form .form-control,
 #enquiry-form .form-control {
     padding: 10px 10px 10px;
     margin-bottom: 10px;
 }
 
+.booking-btns,
 .enquiry-btns {
     text-align: center;
 }
 
+#id_booking_number_of_quizzers,
 #id_enquiry_number_of_quizzers {
     width: 60%;
 }
 
-/*---------- End of Enquiry page ----------*/
+/*---------- End of Booking & Enquiry pages ----------*/
 
 /*----- Footer -----*/
 #footer {
