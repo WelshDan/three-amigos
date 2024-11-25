@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- ===== Booking Section ===== -->
+<section id="booking">
+    <div class="container">
+        {% include 'booking:booking_form.html' %}
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const clearButton = document.getElementById('btn-clear');
+        if (clearButton) {
+            clearButton.addEventListener('click', function () {
+                // Reset the form fields
+                document.getElementById('booking-form').reset();
+            });
+        }
+    });
+</script>
+
+{% endblock %}

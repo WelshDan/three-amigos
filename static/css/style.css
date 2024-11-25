@@ -87,6 +87,7 @@ h6 {
 /*--- End Buttons ---*/
 
 /*----- Navbar menu -----*/
+
 /*Desktop Navigation*/
 .navbar img{
     width:15rem;
@@ -212,6 +213,45 @@ h6 {
 
 /*--- End Navbar ---*/
 
+/*----- Nav-tabs -----*/
+
+.nav-tabs .nav-link {
+    color: #F5F5DC;
+    background-color: #9e7442;
+    border: 1px solid #F5F5DC;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color ease 0.3s;
+    padding: 10px;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #9e7442;
+    color: #F5F5DC;
+    border-color: #9e7442;
+    border-bottom: 2px solid #F5F5DC;
+    border: 2px solid #9e7442
+}
+
+.nav-tabs .nav-link.active:hover {
+    color: #9e7442;
+    background-color: #F5F5DC;
+    border-color: #9e7442;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:active {
+    border-bottom: 2px solid #F5F5DC;
+}
+
+/*--- End Nav-tabs ---*/
+
 /*----- Messages -----*/
 #info-messages {
     position: fixed;
@@ -265,7 +305,7 @@ h6 {
     cursor: pointer;
 }
 
-/*--- End Navbar ---*/
+/*--- End Messages ---*/
 
 /*---------- Index page ----------*/
 
@@ -295,6 +335,7 @@ h6 {
     background-size: cover;
     position: relative;
     padding-top: 20rem;
+    padding-bottom: 20rem;
 }
 
 #hero:before {
@@ -382,44 +423,6 @@ h6 {
 
 /*---------- End of Index page ----------*/
 
-/*---------- Nav-tabs ----------*/
-
-.nav-tabs .nav-link {
-    color: #F5F5DC;
-    background-color: #9e7442;
-    border: 1px solid #F5F5DC;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color ease 0.3s;
-    padding: 10px;
-}
-
-.nav-tabs .nav-link:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-}
-
-.nav-tabs .nav-link.active {
-    background-color: #9e7442;
-    color: #F5F5DC;
-    border-color: #9e7442;
-    border-bottom: 2px solid #F5F5DC;
-    border: 2px solid #9e7442
-}
-
-.nav-tabs .nav-link.active:hover {
-    color: #9e7442;
-    background-color: #F5F5DC;
-    border-color: #9e7442;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:active {
-    border-bottom: 2px solid #F5F5DC;
-}
-/*---------- End Nav-tabs ----------*/
-
 /*---------- Tables page ----------*/
 
 table {
@@ -447,6 +450,7 @@ thead th {
     padding-top: 13rem;
     background: #cda45e;
     color: #fff;
+    min-height: 70rem;
 }
 
 #upcoming h1,
@@ -477,6 +481,10 @@ thead th {
     background-color: #cda45e;
     border-bottom-width: 1px;
     border-bottom-color: #F5F5DC;
+}
+
+#upcoming .tab-pane .table {
+    margin-bottom: 0;
 }
 
 #gs-gates-list, #city-gates-list {
@@ -584,6 +592,7 @@ thead th {
 
 #enquiry-form {
     width: 80%;
+    max-width: 70rem;
     margin: 0 auto;
     border: 2px solid #9e7442;
     color: #9e7442;
