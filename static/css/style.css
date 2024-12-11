@@ -392,35 +392,6 @@ h6 {
 
 /*--- End Pub Intro Section ---*/
 
-/*----- About Us section -----*/
-
-#about-us {
-    padding-bottom: 3rem;
-    background: #cda45e;
-    color: #F5F5DC;
-    text-align: center;
-}
-
-#about-us p {
-    color: #F5F5DC;
-}
-
-#about-us h2 {
-    text-align: center;
-    color: #fff;
-}
-
-#about-us div {
-    padding-top: 10px;
-}
-
-.about-us-links {
-    color: #F5F5DC;
-    text-decoration: none;
-}
-
-/*--- End About Us Section ---*/
-
 /*---------- End of Index page ----------*/
 
 /*---------- Tables page ----------*/
@@ -640,6 +611,50 @@ thead th {
 }
 
 /*---------- End of Booking & Enquiry pages ----------*/
+
+/*---------- Info page ----------*/
+
+/*----- Info section -----*/
+
+#info {
+    padding-top: 13rem;
+    background: #cda45e;
+    color: #fff;
+    min-height: 70rem;
+}
+
+/*--- End Intro Section ---*/
+
+/*----- About Us section -----*/
+
+#about-us {
+    padding-bottom: 3rem;
+    background: #cda45e;
+    color: #F5F5DC;
+    text-align: center;
+}
+
+#about-us p {
+    color: #F5F5DC;
+}
+
+#about-us h2 {
+    text-align: center;
+    color: #fff;
+}
+
+#about-us div {
+    padding-top: 10px;
+}
+
+.about-us-links {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+/*--- End About Us Section ---*/
+
+/*---------- End of Info page ----------*/
 
 /*----- Footer -----*/
 #footer {

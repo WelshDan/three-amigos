@@ -2,9 +2,65 @@
 {% load static %}
 {% block content %}
 
-<!-- ===== Info Section ===== -->
+<!-- ===== Info Page ===== -->
+    <!-- ===== Info Section ===== -->
+    <section id="info" class="section align-items-center">
+        <div class="container position-relative mx-auto text-center text-lg-start">
+            <h1>Here you will find information about:</h1>
+            <h4>The Three Amigos</h4>
+            <h4>The Quiz</h4>
+        </div>
+    </section>
+            
+    <!-- End Info Section -->
 
+    <!-- ===== About Us Section ===== -->
+    <section id="about-us" class="section align-items-center">
+        <div class="container position-relative mx-auto text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2><strong>About Us</strong></h2>
+                    <h3>Who are we?</h3>
+                    <h4>We are two friends who have been hosting the quiz together at Wirströms Pub for nearly 10 years. The
+                        quiz started with three quizmasters but we have been two for the past few years.</h4>
+                </div>
+                <div class="col-lg-12">
+                    <h3>What do we do?</h3>
+                    <h4>We host a quiz with a unique format that is adjusted to suit the participants, the occasion and the
+                        time requirements.
+                    </h4>
+                </div>
+                <div class="col-lg-12">
+                    <h3>Where do we do it?</h3>
+                    <h4>
+                        <p>We host quizzes regularly at <a class="pub-link" href="https://wirstromspub.se#wirstroms"
+                                target="_blank">Wirströms Pub
+                            </a> in <a class="pub-link" href="https://maps.app.goo.gl/zw4M4fxcm5YZTcyJ7"
+                                target="_blank">Gamla Stan</a> (Stockholm) -
+                            See <a href="{% url 'dates' %}" class="about-us-links">dates</a> and
+                            <a href="{% url 'results' %}" class="about-us-links">results</a> for more information.
+                        </p>
+                        <p>Private quizzes can be booked to be hosted at <a class="pub-link"
+                                href="https://wirstromspub.se#wirstroms" target="_blank">Wirströms Pub</a> where around 100
+                            people can be seated at a maximum and depending on the amount of participants, either the whole
+                            of or
+                            a part section of the basement can be reserved.</p>
+                        <p>We have also hosted quizzes away from the pub, including at a local community meeting and for a
+                            function evening
+                            for a multinational company at a local retreat.</p>
+                        <p></p>
+    
+                        <p>Fill in an <a href="{% url 'enquiry:enquiry_form' %}" class="about-us-links">enquiry form</a> to
+                            check availability
+                            or a <a href="{% url 'booking:booking_form' %}" class="about-us-links">booking form</a> to book
+                            a quiz.</p>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us Section -->
 
-
+<!-- ===== End Info Page ===== -->
 
 {% endblock %}
