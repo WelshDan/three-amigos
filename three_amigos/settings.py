@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
-                '8000-welshdan-threeamigos-vf92btplj5r.ws-eu116.gitpod.io',
+                '8000-welshdan-threeamigos-vf92btplj5r.ws-eu117.gitpod.io',
                 '.herokuapp.com'
                 ]
 
@@ -152,5 +152,5 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-welshdan-threeamigos-vf92btplj5r.ws-eu116.gitpod.io',
+    'https://8000-welshdan-threeamigos-vf92btplj5r.ws-eu117.gitpod.io',
 ]
