@@ -618,9 +618,30 @@ thead th {
 
 #info {
     padding-top: 13rem;
+    padding-bottom: 3rem;
     background: #cda45e;
     color: #fff;
-    min-height: 70rem;
+}
+
+#info h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+#about-amigos,
+#about_quiz {
+    padding: 3rem;
+    background-color: #9e7442;
+}
+
+#about-amigos h4,
+#about_quiz h4 {
+    color: #F5F5DC;
+}
+
+[role="about-section"] .nav-link:hover {
+    background-color: #9e7442;
+    color: #F5F5DC;
 }
 
 /*--- End Intro Section ---*/
