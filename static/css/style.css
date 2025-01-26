@@ -618,7 +618,7 @@ thead th {
 
 #info {
     padding-top: 13rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0.5rem;
     background: #cda45e;
     color: #fff;
 }
@@ -628,19 +628,44 @@ thead th {
     text-align: center;
 }
 
-#about-amigos,
-#about_quiz {
+#about-amigos {
+    padding: 3rem;
+    background-color: #cda45e;
+}
+
+#about-quiz {
     padding: 3rem;
     background-color: #9e7442;
 }
 
-#about-amigos h4,
+#about-amigos h3,
+#about-amigos h4 {
+    color: #9e7442;
+}
+
+
+#about-quiz h3,
 #about_quiz h4 {
     color: #F5F5DC;
 }
 
-[role="about-section"] .nav-link:hover {
-    background-color: #9e7442;
+#about-amigos p,
+#about-quiz p {
+    color: #fff;
+}
+
+[role="about-amigos-section"] .nav-link {
+    background-color: #cda45e;
+    color: #F5F5DC;
+}
+
+[role="about-amigos-section"] .nav-link.active {
+    background-color: #F5F5DC;
+    color: #9e7442;
+}
+
+[role="about-amigos-section"] .nav-link:hover {
+    background-color: #cda45e;
     color: #F5F5DC;
 }
 
