@@ -9,3 +9,6 @@ pandas
 gspread
 openpyxl
 pillow
+
+Activating virtual environment:
+source venv/bin/activate

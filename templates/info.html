@@ -20,7 +20,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6, col-md-4, col-lg-4">
-                    <ul class="nav nav-tabs flex-column" role="about-amigos-section">
+                    <ul class="nav nav-tabs flex-column" data-role="about-amigos-section">
                         <li class="nav-item">
                             <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Who are the Three Amigos?</a>
                         </li>
@@ -33,7 +33,10 @@
                                 Pub?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Could we order just a quiz?</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">What shall I do if I am interested in hiring you for a quiz?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Can we order just the quiz?</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +47,6 @@
                                 <div class="col-lg-8 details order-2 order-lg-1">
                                     <h3>Who are The Three Amigos</h3>
                                     <p>The quiz started with three quizmasters (hence the name) but we have been two for several years now.
-                                        With two quizmasters, we find there is a better flow to the quiz.
                                         There have been a few guest quizmasters over the years too.
                                     </p>
                                 </div>
@@ -56,8 +58,8 @@
                         <div class="tab-pane" id="tab-2">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>How long have we hosted the quiz at Wirströms Pub?</h3>
-                                    <p>We have been hosting the quiz for almost 10 years now. We have hosted close to
+                                    <h3>How long have you hosted the quiz at Wirströms Pub?</h3>
+                                    <p>We have been hosting the quiz for more than 11 years. We have hosted more than
                                         200 quizzes during that time.</p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -71,10 +73,10 @@
                                 <div class="col-lg-8 details order-2 order-lg-1">
                                     <h3>How do we attend a quiz at Wirströms Pub?</h3>
                                     <p>We host quizzes every second Thursday that start at 19.00. The maximum number of players per team is 6.
-                                        Tables can be booked by emailing booking@wirstromspub.se</p>
-                                    <p><a class="pub-link" href="https://wirstromspub.se#wirstroms"
+                                        Tables can be booked via Wirströms Pub by emailing <a class="email-link" href="mailto:{booking@wirstromspub.se}">booking@wirstromspub.se</a></p>
+                                    <p><a class="about-us-links" href="https://wirstromspub.se#wirstroms"
                                             target="_blank">Wirströms Pub
-                                        </a> in <a class="pub-link" href="https://maps.app.goo.gl/zw4M4fxcm5YZTcyJ7"
+                                        </a> in <a class="about-us-links" href="https://maps.app.goo.gl/zw4M4fxcm5YZTcyJ7"
                                             target="_blank">Gamla Stan</a> (Stockholm) -
                                         See <a href="{% url 'dates' %}" class="about-us-links">dates</a> and
                                         <a href="{% url 'results' %}" class="about-us-links">results</a> for more
@@ -89,8 +91,23 @@
                         <div class="tab-pane" id="tab-4">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>What shall I do if I am interested in hiring you for a quiz?</h3>
+                                    <p>You can fill in a <a href="{% url 'booking:booking_form' %}" class="about-us-links">booking form</a> if you know what you want and when you want it.
+                                        Or you can fill in an <a href="{% url 'enquiry:enquiry_form' %}" class="about-us-links">enquiry form</a> and we can see if we can arrange what you want together.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="{% static 'media/menu-section/healthy.jpg' %}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-5">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
                                     <h3>Can we order a quiz that we can host ourselves?</h3>
-                                    <p>Yes! Send an email to threeamigosquiz@gmail.com and we can discuss the details.</p>
+                                    <p>Sure! Send an email to <a class="quiz-email-link"
+                                        href="mailto:{threeamigosquiz@gmail.com}">threeamigosquiz@gmail.com</a> and we can discuss it
+                                    </p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
                                     <img src="{% static 'media/menu-section/healthy.jpg' %}" alt="" class="img-fluid">
@@ -108,25 +125,25 @@
                 <h3>The Quiz at Wirströms Pub</h3>
             </div>
             <div class="row">
-                <div class="col-lg-3">
-                    <ul class="nav nav-tabs flex-column" role="about-quiz-section">
+                <div class="col-sm-6, col-md-4, col-lg-4">
+                    <ul class="nav nav-tabs flex-column" data-role="about-quiz-section">
                         <li class="nav-item">
-                            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-5">Quiz format</a>
+                            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-6">What is the quiz format</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#tab-6">How hard are the questions?</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-7">How hard are the questions?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#tab-7">How much does it cost to play?</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-8">How much does it cost to play?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#tab-8">Can we order just the quiz?</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-9">What can you win?</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="col-lg-8 mt-4 mt-lg-0">
                     <div class="tab-content">
-                        <div class="tab-pane active show" id="tab-5">
+                        <div class="tab-pane active show" id="tab-6">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
                                     <h3>What is the quiz layout?</h3>
@@ -140,11 +157,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-6">
+                        <div class="tab-pane" id="tab-7">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>How much does the quiz cost?</h3>
-                                    <p>The quiz at Wirströms Pub is free to enter - just don't forget to email your table booking.
+                                    <h3>How hard are the questions?</h3>
+                                    <p>There are a variety of difficulty levels to the questions. We suggest teams of 4-6 people to cover the range of subjects but of course smaller teams can enjoy the quiz too.
                                     </p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -153,23 +170,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-7">
+                        <div class="tab-pane" id="tab-8">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>How do we attend a quiz at Wirströms Pub?</h3>
-                                    <p>We host quizzes every second Thursday that start at 19.00. Tables can be booked by
-                                        emailing booking@wirstromspub.se</p>
+                                    <h3>How much does the quiz cost?</h3>
+                                    <p>The quiz at Wirströms Pub is free to enter - just don't forget to email your table booking.
+                                    </p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
                                     <img src="{% static 'media/menu-section/meats.jpg' %}" alt="" class="img-fluid">
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-8">
+                        <div class="tab-pane" id="tab-9">
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
-                                    <h3>Can we order a quiz that we can host ourselves?</h3>
-                                    <p>Sure! Send an email to threeamigosquiz@gmail.com and we can discuss </p>
+                                    <h3>What can be won at the quiz?</h3>
+                                    <p><span>First prize: Trophy + Wirströms Pub vouchers</span>
+                                        <span></span>Second prize: Trophy + Wirströms Pub vouchers</span>
+                                        <span></span>Third prize: Wirströms Pub vouchers</span>
+                                        <span></span>Wheel prizes: Gifts from our sponsors at Comics Heaven</span>
+                                    </p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
                                     <img src="{% static 'media/menu-section/healthy.jpg' %}" alt="" class="img-fluid">

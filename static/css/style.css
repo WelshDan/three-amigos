@@ -646,7 +646,7 @@ thead th {
 
 #about-quiz h3,
 #about_quiz h4 {
-    color: #F5F5DC;
+    color: #cda45e;
 }
 
 #about-amigos p,
@@ -654,19 +654,38 @@ thead th {
     color: #fff;
 }
 
-[role="about-amigos-section"] .nav-link {
+[data-role="about-amigos-section"] .nav-link {
     background-color: #cda45e;
     color: #F5F5DC;
 }
 
-[role="about-amigos-section"] .nav-link.active {
+[data-role="about-amigos-section"] .nav-link.active {
     background-color: #F5F5DC;
     color: #9e7442;
 }
 
-[role="about-amigos-section"] .nav-link:hover {
+[data-role="about-amigos-section"] .nav-link:hover {
     background-color: #cda45e;
     color: #F5F5DC;
+}
+
+[data-role="about-quiz-section"] .nav-link {
+    background-color: #9e7442;
+    color: #F5F5DC;
+}
+
+[data-role="about-quiz-section"] .nav-link.active {
+    background-color: #F5F5DC;
+    color: #9e7442;
+}
+
+[data-role="about-quiz-section"] .nav-link:hover {
+    background-color: #9e7442;
+    color: #F5F5DC;
+}
+
+[data-role="about-amigos-section"] .nav-tabs {
+    border-bottom: none;
 }
 
 /*--- End Intro Section ---*/
@@ -694,6 +713,26 @@ thead th {
 }
 
 .about-us-links {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.about-us-links:hover {
+    color: #9e7442;
+    text-decoration: none;
+}
+
+.email-link {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    color: #9e7442;
+    text-decoration: none;
+}
+
+.quiz-email-link {
     color: #F5F5DC;
     text-decoration: none;
 }
